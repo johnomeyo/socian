@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seekers/auth/login_page.dart';
 import 'package:seekers/pages/homepage/widgets/greetings_widget.dart';
 import 'package:seekers/pages/homepage/widgets/job_categories.dart';
 import 'package:seekers/pages/homepage/widgets/loan_banner.dart';
@@ -20,11 +21,15 @@ class HomePage extends StatelessWidget {
                 "https://s3-alpha-sig.figma.com/img/d252/5c23/41ac11fd8f67a5f633eadace725fee4b?Expires=1730073600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qBRYkub-H-bMLM7bCpX4XPn4NnC7~gMwLjG4OkgqTXUpaUBC6p7dwXIbjq5a8YrVdhRTzGEN5Bi2Jkfjpy6qSJgOBSY7kNekS5DPShf52lcu0cRrZt3SQnm5gkvLaAgc1JohH-Gb6qbVWZD3Van5fgJX7coq8M1xTdroWknd4111FSgA7LgayiEKy6i2VADGSittPwrnUvLgBQSm20xtLB826D~CflWvRoUjcGRsM~uEHuFDm2YaWtxlpvcXDOnLJBvkxAYxD4SL52~1rTcMESnVes5-V4-mKd8EputqanNGHVzUbA2EhQjRlLfYN-azxO~JPQfP2vGyU9g8fzbumg__"),
           ),
         ),
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.only(right: 16, top: 10),
-            child: Column(
-              children: [Icon(Icons.notifications), Text("Offline")],
+            padding: const EdgeInsets.only(right: 16, top: 10),
+            child: InkWell(
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => LoginPage())),
+              child: const Column(
+                children: [Icon(Icons.notifications), Text("Offline")],
+              ),
             ),
           )
         ],
