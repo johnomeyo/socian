@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:seekers/auth/custom_button.dart';
+import 'package:seekers/pages/job_app_res_page.dart';
 
 // Define a reusable color scheme and text styles
 const kPrimaryColor = Colors.purple;
@@ -41,13 +43,22 @@ class JobDetailsPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const JobHeader(), 
+              const JobHeader(),
               const SizedBox(height: 32),
-              const JobDescription(), 
+              const JobDescription(),
               const SizedBox(height: 16),
-              const JobRequirements(), 
-              const Spacer(),
-              GetJobButton(onPressed: _applyForJob), // Extracted and passed logic
+              const JobRequirements(),
+              const SizedBox(
+                height: 30,
+              ),
+              CustomButton(
+                  text: "GET JOB",
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ApplicationResponsePage()));
+                  }) // Extracted and passed logic
             ],
           ),
         ),
@@ -55,9 +66,9 @@ class JobDetailsPage extends StatelessWidget {
     );
   }
 
-  void _applyForJob() {
-    // Add your logic to apply for the job
-  }
+  // void _applyForJob() {
+  //   // Add your logic to apply for the job
+  // }
 }
 
 class JobHeader extends StatelessWidget {
@@ -75,7 +86,7 @@ class JobHeader extends StatelessWidget {
         SizedBox(height: 20),
         Text('Waiter', style: kTitleTextStyle),
         SizedBox(height: 10),
-        JobInfoCard(), 
+        JobInfoCard(),
       ],
     );
   }
@@ -96,7 +107,7 @@ class JobInfoCard extends StatelessWidget {
             Text('Java House', style: kSubTitleTextStyle),
             Text('Nairobi', style: kSubTitleTextStyle),
             Text('3 Mins Ago', style: kSubTitleTextStyle),
-          ], 
+          ],
         ),
       ),
     );
@@ -149,27 +160,6 @@ class JobRequirements extends StatelessWidget {
           style: kBodyTextStyle,
         ),
       ],
-    );
-  }
-}
-
-class GetJobButton extends StatelessWidget {
-  final VoidCallback onPressed;
-
-  const GetJobButton({super.key, required this.onPressed});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.symmetric(vertical: 16),
-          backgroundColor: kPrimaryColor,
-        ),
-        child: const Text('GET THE JOB', style: TextStyle(color: Colors.white)),
-      ),
     );
   }
 }

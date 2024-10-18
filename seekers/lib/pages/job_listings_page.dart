@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:seekers/pages/job_details_page.dart';
 
 class JobListPage extends StatelessWidget {
-  const JobListPage({super.key});
+  final String title;
+  const JobListPage({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +21,11 @@ class JobListPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _buildMapHeader(),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+             Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               child: Text(
-                '5+ Hour Jobs',
-                style: TextStyle(
+                title,
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: Colors.purple,
@@ -123,7 +124,7 @@ class JobListPage extends StatelessWidget {
       itemBuilder: (context, index) {
         return GestureDetector(
             onTap: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => JobDetailsPage())),
+                MaterialPageRoute(builder: (context) => const JobDetailsPage())),
             child: JobCard(job: jobItems[index]));
       },
     );

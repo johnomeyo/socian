@@ -76,8 +76,12 @@ class JobCategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const JobListPage()));
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => JobListPage(
+                      title: title,
+                    )));
       },
       child: Container(
         width: width,

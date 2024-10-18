@@ -15,7 +15,7 @@ class JobCard extends StatelessWidget {
           child: Column(
             children: [
               _buildJobHeader(),
-              const SizedBox(height: 12),
+              const SizedBox(height: 5),
               _buildJobFooter(),
             ],
           ),
@@ -60,7 +60,6 @@ class JobCard extends StatelessWidget {
                   )
                 ],
               ),
-              const SizedBox(height: 4),
               const Text(
                 'Java House. Nairobi, Kenya',
                 style: TextStyle(
@@ -68,7 +67,6 @@ class JobCard extends StatelessWidget {
                   color: Colors.black54,
                 ),
               ),
-              const SizedBox(height: 8),
               const Row(
                 children: [
                   Icon(
@@ -107,7 +105,6 @@ class JobCard extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 8),
         Row(
           children: [
             const FilledButton.tonal(
