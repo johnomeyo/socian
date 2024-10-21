@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
 class SkillProvider with ChangeNotifier {
-  // The list of selected skills
   List<String> _selectedSkills = [];
 
-  // Getter for selected skills
   List<String> get selectedSkills => _selectedSkills;
 
-  // Method to save the selected skills
-  void saveSelectedSkills(List<String> selectedSkills) {
-    _selectedSkills = selectedSkills;
-    notifyListeners(); // Notify listeners when the state changes
+  void saveSelectedSkills(List<String> skills) {
+    _selectedSkills = skills;
+    notifyListeners();
+  }
+
+  void removeSkill(String skill) {
+    _selectedSkills.remove(skill);
+    notifyListeners();
   }
 }

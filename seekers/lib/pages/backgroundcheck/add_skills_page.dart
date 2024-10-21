@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:seekers/auth/custom_button.dart';
+import 'package:seekers/pages/backgroundcheck/skills_display_page.dart';
 import 'package:seekers/providers/skills_provider.dart';
 
 class AddSkillsPage extends StatefulWidget {
@@ -65,6 +66,7 @@ class AddSkillsPageState extends State<AddSkillsPage> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -86,7 +88,7 @@ class AddSkillsPageState extends State<AddSkillsPage> {
             const SizedBox(height: 20),
             _buildSkillCountIndicator(),
             const SizedBox(height: 20),
-            _selectedSkills.length <3
+            _selectedSkills.length < 3
                 ? const SizedBox(
                     width: double.infinity,
                     child: FilledButton(onPressed: null, child: Text("SAVE")))
@@ -96,11 +98,19 @@ class AddSkillsPageState extends State<AddSkillsPage> {
                       Provider.of<SkillProvider>(context, listen: false)
                           .saveSelectedSkills(_selectedSkills);
                       ScaffoldMessenger.of(context).showSnackBar(
-                         SnackBar(content:const Text('Skills Saved Successfully!'),backgroundColor: Colors.purple[400],),
+                        SnackBar(
+                          content: const Text('Skills Saved Successfully!'),
+                          backgroundColor: Colors.purple[400],
+                        ),
                       );
                       setState(() {
                         _selectedSkills = [];
                       });
+
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const SkillsDisplayPage()));
                     })
           ],
         ),
