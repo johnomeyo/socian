@@ -60,7 +60,7 @@ class SkillsDisplayPage extends StatelessWidget {
     return Chip(
       label: Padding(
         padding: const EdgeInsets.symmetric(vertical:4, horizontal: 0),
-        child: Text(skill, style: const TextStyle(color: Colors.purple)),
+        child: Text(skill, style: const TextStyle(color: Color(0xFF9C27B0))),
       ),
       backgroundColor: const Color(0xFFF3E5F5),
       deleteIcon: const Icon(Icons.close, color: Colors.purple),
