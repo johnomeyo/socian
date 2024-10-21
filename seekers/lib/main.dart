@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seekers/pages/backgroundcheck/backgroundcheck_page.dart';
 import 'package:seekers/pages/homepage.dart';
 import 'package:seekers/theme.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: appTheme,
-        home:  const HomePage());
+        home:   const BackgroundCheckPage());
   }
 }
 
