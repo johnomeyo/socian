@@ -1,6 +1,7 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:seekers/auth/custom_button.dart';
+import 'package:seekers/pages/backgroundcheck/add_skills_page.dart';
 
 class BackgroundCheckPage extends StatefulWidget {
   const BackgroundCheckPage({super.key});
@@ -63,7 +64,14 @@ class BackgroundCheckPageState extends State<BackgroundCheckPage> {
             const SizedBox(height: 30),
             _buildWarningText(),
             const SizedBox(height: 20),
-            CustomButton(text: "SUBMIT", onPressed: () {}),
+            CustomButton(
+                text: "SUBMIT",
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AddSkillsPage()));
+                }),
             const SizedBox(height: 20),
           ],
         ),
@@ -97,7 +105,7 @@ class BackgroundCheckPageState extends State<BackgroundCheckPage> {
       strokeWidth: 1,
       color: Colors.grey,
       borderType: BorderType.RRect,
-      radius:const Radius.circular(12),
+      radius: const Radius.circular(12),
       child: Container(
         width: double.infinity,
         padding: const EdgeInsets.symmetric(vertical: 20),

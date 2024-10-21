@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:seekers/pages/backgroundcheck/backgroundcheck_page.dart';
-import 'package:seekers/pages/homepage.dart';
+// import 'package:seekers/pages/homepage.dart';
 import 'package:seekers/theme.dart';
 
 void main() {
