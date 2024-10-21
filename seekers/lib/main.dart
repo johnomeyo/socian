@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:seekers/pages/backgroundcheck/backgroundcheck_page.dart';
 // import 'package:seekers/pages/homepage.dart';
+import 'package:provider/provider.dart';
+import 'package:seekers/providers/skills_provider.dart';
 import 'package:seekers/theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => SkillProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -16,8 +25,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: appTheme,
-        home:   const BackgroundCheckPage());
+        home: const BackgroundCheckPage());
   }
 }
-
-

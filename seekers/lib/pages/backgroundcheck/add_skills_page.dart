@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:seekers/auth/custom_button.dart';
+import 'package:seekers/providers/skills_provider.dart';
 
 class AddSkillsPage extends StatefulWidget {
   const AddSkillsPage({super.key});
@@ -23,7 +25,7 @@ class AddSkillsPageState extends State<AddSkillsPage> {
   ];
 
   var _filteredSkills = <String>[];
-  final List<String> _selectedSkills = [];
+  List<String> _selectedSkills = [];
   final TextEditingController _searchController = TextEditingController();
 
   @override
@@ -84,7 +86,22 @@ class AddSkillsPageState extends State<AddSkillsPage> {
             const SizedBox(height: 20),
             _buildSkillCountIndicator(),
             const SizedBox(height: 20),
-            CustomButton(text: "SAVE", onPressed: () {})
+            _selectedSkills.length <3
+                ? const SizedBox(
+                    width: double.infinity,
+                    child: FilledButton(onPressed: null, child: Text("SAVE")))
+                : CustomButton(
+                    text: "SAVE",
+                    onPressed: () {
+                      Provider.of<SkillProvider>(context, listen: false)
+                          .saveSelectedSkills(_selectedSkills);
+                      ScaffoldMessenger.of(context).showSnackBar(
+                         SnackBar(content:const Text('Skills Saved Successfully!'),backgroundColor: Colors.purple[400],),
+                      );
+                      setState(() {
+                        _selectedSkills = [];
+                      });
+                    })
           ],
         ),
       ),
@@ -100,7 +117,7 @@ class AddSkillsPageState extends State<AddSkillsPage> {
       ),
       child: TextField(
         controller: _searchController,
-        style:const TextStyle(
+        style: const TextStyle(
           color: Colors.grey,
         ),
         decoration: InputDecoration(
