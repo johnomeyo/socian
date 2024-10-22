@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:seekers/auth/auth_header.dart';
 import 'package:seekers/auth/custom_button.dart';
-import 'package:seekers/pages/homepage.dart';
-import 'package:seekers/pages/job_view_page.dart';
+import 'package:seekers/pages/homepage/homepage.dart';
+import 'package:seekers/pages/jobviewpage/job_view_page.dart';
 
 class ApplicationResponsePage extends StatefulWidget {
   const ApplicationResponsePage({super.key});
