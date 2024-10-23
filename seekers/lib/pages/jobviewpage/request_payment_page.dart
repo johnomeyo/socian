@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:seekers/pages/jobviewpage/job_description_section.dart';
+import 'package:seekers/auth/custom_button.dart';
 import 'package:seekers/pages/jobviewpage/job_payment_details.dart';
-import 'package:seekers/pages/jobviewpage/job_view_page.dart';
-import 'package:seekers/pages/jobviewpage/request_payment_page.dart';
-import 'package:seekers/pages/jobviewpage/shift_card.dart';
+import 'package:seekers/pages/jobviewpage/review_page.dart';
+import 'package:seekers/pages/jobviewpage/time_card.dart';
 
-class JobShiftPage extends StatelessWidget {
-  const JobShiftPage({super.key});
+class RequestPaymentPage extends StatelessWidget {
+  const RequestPaymentPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,32 +39,22 @@ class JobShiftPage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              ShiftCard(
-                  hours: 4,
-                  minutes: 36,
-                  endingInMinutes: 4,
-                  onEndShift: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const RequestPaymentPage()));
-                  }),
-              const SizedBox(height: 20),
-              // Job Payment Details Section
-              const JobPaymentDetails(),
-              const SizedBox(height: 40),
-              // Job Description Section
-              const JobDescriptionSection(),
-              const SizedBox(height: 20),
-
-              // Bottom Action Buttons
-              const BottomActionButtons(),
-              const SizedBox(height: 8),
-            ],
-          ),
+        child: Column(
+          children: [
+            const TimeCard(
+                hours: 4,
+                minutes: 00,
+                startTime: "9:00 am",
+                endTime: '1:00 pm'),
+            const SizedBox(
+              height: 20,
+            ),
+            const JobPaymentDetails(),
+            const SizedBox(
+              height: 40,
+            ),
+            CustomButton(text: "REQUEST PAYMENT", onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> ReviewPage()));})
+          ],
         ),
       ),
     );
