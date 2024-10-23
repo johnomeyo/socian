@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seekers/pages/jobviewpage/Job_SHift_page.dart';
 import 'package:seekers/pages/jobviewpage/action_buttons.dart';
 import 'package:seekers/pages/jobviewpage/info_card.dart';
 import 'package:seekers/pages/jobviewpage/job_description_section.dart';
@@ -37,7 +38,9 @@ class ViewJobPage extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: FilledButton.icon(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> const JobShiftPage()));
+                  },
                   icon: const Icon(Icons.timelapse),
                   label: const Text("START SHIFT"),
                 ),
