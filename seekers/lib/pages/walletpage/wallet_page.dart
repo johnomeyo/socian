@@ -12,6 +12,19 @@ class WalletPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _buildHeader(context),
+            const SizedBox(
+              height: 10,
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
+                "My Subscription",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                    color: Colors.purple),
+              ),
+            ),
             _buildSubscriptionCard(),
             _buildTransactionList(),
           ],
@@ -106,52 +119,23 @@ class WalletPage extends StatelessWidget {
   Widget _buildSubscriptionCard() {
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: Container(
-        padding: const EdgeInsets.all(16.0),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(16),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.1),
-              blurRadius: 8,
-              spreadRadius: 2,
-            ),
-          ],
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "My Subscription",
-                  style: TextStyle(
-                    color: Colors.grey,
-                  ),
-                ),
-                SizedBox(height: 4),
-                Text(
-                  "Socian Starter ksh 500/mth",
-                  style: TextStyle(
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                "Socian Starter ksh 500/mth",
+                style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
-                  ),
-                ),
-              ],
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.purpleAccent,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
+                    color: Colors.purple),
               ),
-              child: const Text("Upgrade Plan"),
-            ),
-          ],
+              FilledButton.tonal(
+                  onPressed: () {}, child: const Text("Upgrade plan"))
+            ],
+          ),
         ),
       ),
     );
@@ -162,22 +146,23 @@ class WalletPage extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         children: [
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 "Latest Transactions",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
-                ),
-              ),
-              Text(
-                "View all",
-                style: TextStyle(
                   color: Colors.purpleAccent,
                 ),
               ),
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                  "View all",
+                ),
+              )
             ],
           ),
           const SizedBox(height: 8),
@@ -195,45 +180,41 @@ class WalletPage extends StatelessWidget {
     bool isReceived = amount.startsWith("+");
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            children: [
-              Icon(
-                isReceived ? Icons.arrow_downward : Icons.arrow_upward,
+      padding: const EdgeInsets.symmetric(vertical: 4.0), // Adjust padding as needed
+      child: Card(
+        color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ListTile(
+            contentPadding: EdgeInsets.zero, // To align with the previous padding
+            leading: CircleAvatar(
+              backgroundColor: isReceived ? Colors.purple.withOpacity(0.2) : Colors.red.withOpacity(0.2),
+              child: Icon(
+                isReceived ? Icons.file_upload_outlined : Icons.file_download_outlined,
+                color: isReceived ? Colors.purple : Colors.red,
+              ),
+            ),
+            title: Text(
+              type,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            subtitle: Text(
+              date,
+              style: const TextStyle(
+                color: Colors.grey,
+              ),
+            ),
+            trailing: Text(
+              amount,
+              style: TextStyle(
                 color: isReceived ? Colors.green : Colors.red,
+                fontWeight: FontWeight.bold,
               ),
-              const SizedBox(width: 8),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    type,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    date,
-                    style: const TextStyle(
-                      color: Colors.grey,
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          Text(
-            amount,
-            style: TextStyle(
-              color: isReceived ? Colors.green : Colors.red,
-              fontWeight: FontWeight.bold,
             ),
           ),
-        ],
+        ),
       ),
     );
   }
