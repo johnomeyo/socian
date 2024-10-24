@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pannable_rating_bar/flutter_pannable_rating_bar.dart';
 import 'package:seekers/auth/custom_button.dart';
+import 'package:seekers/pages/homepage/homepage.dart';
 
 class ReviewPage extends StatefulWidget {
   const ReviewPage({super.key});
@@ -88,6 +89,7 @@ class ReviewPageState extends State<ReviewPage> {
                   // Handle the review submission logic
                   final comment = _commentController.text;
                   print("Rating: $_rating, Comment: $comment");
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const HomePage()));
                 })
           ],
         ),
