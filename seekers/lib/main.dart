@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:seekers/pages/homepage/homepage.dart';
+// import 'package:seekers/pages/homepage/homepage.dart';
 import 'package:provider/provider.dart';
+import 'package:seekers/pages/walletpage/wallet_page.dart';
 import 'package:seekers/providers/skills_provider.dart';
 import 'package:seekers/theme.dart';
 
@@ -29,6 +30,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: appTheme,
-        home: const HomePage());
+        home:  WalletPage());
   }
 }
