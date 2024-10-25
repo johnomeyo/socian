@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class WalletPage extends StatelessWidget {
   const WalletPage({super.key});
@@ -26,7 +27,7 @@ class WalletPage extends StatelessWidget {
               ),
             ),
             _buildSubscriptionCard(),
-            _buildTransactionList(),
+            _buildTransactionList(context),
           ],
         ),
       ),
@@ -141,7 +142,7 @@ class WalletPage extends StatelessWidget {
     );
   }
 
-  Widget _buildTransactionList() {
+  Widget _buildTransactionList(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
@@ -166,31 +167,43 @@ class WalletPage extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 8),
-          _buildTransactionItem("Received", "Yesterday 02:12", "+ksh430.00"),
-          _buildTransactionItem("Received", "Yesterday 02:12", "+ksh430.00"),
-          _buildTransactionItem("Withdrawn", "Yesterday 02:12", "-ksh300.00"),
-          _buildTransactionItem("Received", "Yesterday 02:12", "+ksh430.00"),
-          _buildTransactionItem("Received", "Yesterday 02:12", "+ksh430.00"),
+          _buildTransactionItem(
+              "Received", "Yesterday 02:12", "+ksh430.00", context),
+          _buildTransactionItem(
+              "Received", "Yesterday 02:12", "+ksh430.00", context),
+          _buildTransactionItem(
+              "Withdrawn", "Yesterday 02:12", "-ksh300.00", context),
+          _buildTransactionItem(
+              "Received", "Yesterday 02:12", "+ksh430.00", context),
+          _buildTransactionItem(
+              "Received", "Yesterday 02:12", "+ksh430.00", context),
         ],
       ),
     );
   }
 
-  Widget _buildTransactionItem(String type, String date, String amount) {
+  Widget _buildTransactionItem(
+      String type, String date, String amount, BuildContext context) {
     bool isReceived = amount.startsWith("+");
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4.0), // Adjust padding as needed
+      padding:
+          const EdgeInsets.symmetric(vertical: 4.0), // Adjust padding as needed
       child: Card(
         color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: ListTile(
-            contentPadding: EdgeInsets.zero, // To align with the previous padding
+            contentPadding:
+                EdgeInsets.zero, // To align with the previous padding
             leading: CircleAvatar(
-              backgroundColor: isReceived ? Colors.purple.withOpacity(0.2) : Colors.red.withOpacity(0.2),
+              backgroundColor: isReceived
+                  ? Colors.purple.withOpacity(0.2)
+                  : Colors.red.withOpacity(0.2),
               child: Icon(
-                isReceived ? Icons.file_upload_outlined : Icons.file_download_outlined,
+                isReceived
+                    ? Icons.file_upload_outlined
+                    : Icons.file_download_outlined,
                 color: isReceived ? Colors.purple : Colors.red,
               ),
             ),
@@ -213,35 +226,109 @@ class WalletPage extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+            onTap: () {
+              showTransactionDetails(context);
+            },
           ),
         ),
       ),
     );
   }
 
-  // Widget _buildBottomNavigationBar() {
-  //   return BottomNavigationBar(
-  //     currentIndex: 0,
-  //     selectedItemColor: Colors.purpleAccent,
-  //     unselectedItemColor: Colors.grey,
-  //     items: const [
-  //       BottomNavigationBarItem(
-  //         icon: Icon(Icons.home),
-  //         label: "Home",
-  //       ),
-  //       BottomNavigationBarItem(
-  //         icon: Icon(Icons.credit_card),
-  //         label: "Wallet",
-  //       ),
-  //       BottomNavigationBarItem(
-  //         icon: Icon(Icons.history),
-  //         label: "History",
-  //       ),
-  //       BottomNavigationBarItem(
-  //         icon: Icon(Icons.person),
-  //         label: "Profile",
-  //       ),
-  //     ],
-  //   );
-  // }
+  void showTransactionDetails(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+          contentPadding: EdgeInsets.zero,
+          content: SizedBox(
+            width: MediaQuery.of(context).size.width * 0.8,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // Date label at the top
+                Container(
+                    height: 120,
+                    color: Colors.purple.withOpacity(0.1),
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    alignment: Alignment.center,
+                    child: FilledButton.tonal(
+                        onPressed: () {},
+                        child: const Text("Yesterday 12:12"))),
+                // Icon and information
+                const Column(
+                  children: [
+                    SizedBox(height: 12),
+                    Text(
+                      "Received",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17,
+                      ),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      "Sent By Java House",
+                      style: TextStyle(
+                        // color: Colors.grey.shade600,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17,
+                      ),
+                    ),
+                    SizedBox(height: 12),
+                    Text(
+                      "+ KSH 500",
+                      style: TextStyle(
+                        color: Colors.purple,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 35,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20,),
+                // Transaction ID and Copy button
+                SizedBox(
+                  width: 200,
+                  child: FilledButton.tonal(
+                    onPressed: () {
+                      Clipboard.setData(
+                          const ClipboardData(text: "TRC003474747"));
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text("Transaction ID copied!"),
+                        ),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Text(
+                          "ID: TRC003474747",
+                          style: TextStyle(
+                            color: Colors.grey.shade600,
+                            fontSize: 17,
+                            fontWeight: FontWeight.bold
+                          ),
+                        ),
+                        const SizedBox(width: 10,),
+                        const Icon(
+                          Icons.copy,
+                          color: Colors.purple,
+                          size: 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 20,)
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
 }
