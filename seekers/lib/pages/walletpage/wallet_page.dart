@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:seekers/pages/walletpage/profile_settings_page.dart';
 
 class WalletPage extends StatelessWidget {
   const WalletPage({super.key});
@@ -31,7 +32,6 @@ class WalletPage extends StatelessWidget {
           ],
         ),
       ),
-      // bottomNavigationBar: _buildBottomNavigationBar(),
     );
   }
 
@@ -52,15 +52,23 @@ class WalletPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CircleAvatar(
+              const CircleAvatar(
                 backgroundImage: NetworkImage(
                     'https://images.unsplash.com/photo-1499651681375-8afc5a4db253?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c21pbGluZyUyMGZhY2V8ZW58MHx8MHx8fDA%3D'),
                 radius: 24,
               ),
-              Icon(Icons.settings_outlined, color: Colors.white),
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SettingsPage()));
+                },
+                icon: const Icon(Icons.settings_outlined, color: Colors.white),
+              )
             ],
           ),
           const SizedBox(height: 16),
@@ -289,7 +297,9 @@ class WalletPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 20,),
+                const SizedBox(
+                  height: 20,
+                ),
                 // Transaction ID and Copy button
                 SizedBox(
                   width: 200,
@@ -308,12 +318,13 @@ class WalletPage extends StatelessWidget {
                         Text(
                           "ID: TRC003474747",
                           style: TextStyle(
-                            color: Colors.grey.shade600,
-                            fontSize: 17,
-                            fontWeight: FontWeight.bold
-                          ),
+                              color: Colors.grey.shade600,
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold),
                         ),
-                        const SizedBox(width: 10,),
+                        const SizedBox(
+                          width: 10,
+                        ),
                         const Icon(
                           Icons.copy,
                           color: Colors.purple,
@@ -323,7 +334,9 @@ class WalletPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20,)
+                const SizedBox(
+                  height: 20,
+                )
               ],
             ),
           ),
