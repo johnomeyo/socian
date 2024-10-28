@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seekers/auth/custom_button.dart';
 
 class SubscriptionPage extends StatelessWidget {
   const SubscriptionPage({super.key});
@@ -6,28 +7,25 @@ class SubscriptionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Subscription Plans",
-          style: TextStyle(color: Colors.purple),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.purple),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
-      ),
+      appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _buildPlanCard(),
-            const Spacer(),
-            _buildRenewButton(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 20),
+              const Text(
+                "Settings",
+                style: TextStyle(
+                    color: Colors.purple,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 20),
+              _buildPlanCard(),
+            ],
+          ),
         ),
       ),
     );
@@ -43,21 +41,21 @@ class SubscriptionPage extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Text(
               'Ksh 500/mth',
               style: TextStyle(
-                fontSize: 24,
+                fontSize: 40,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 20),
             const Text(
               'Socian Starter',
               style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey,
+                fontSize: 22,
+                color: Colors.black,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -65,7 +63,7 @@ class SubscriptionPage extends StatelessWidget {
             const Text(
               'Billed Monthly.',
               style: TextStyle(
-                fontSize: 14,
+                fontSize: 18,
                 color: Colors.grey,
               ),
             ),
@@ -74,6 +72,13 @@ class SubscriptionPage extends StatelessWidget {
             _buildFeatureItem('Chat to employer'),
             _buildFeatureItem('Guaranteed jobs'),
             _buildFeatureItem('Customer Service'),
+            const SizedBox(
+              height: 20,
+            ),
+            CustomButton(text: "RENEW PLAN", onPressed: () {}),
+            const SizedBox(
+              height: 20,
+            ),
           ],
         ),
       ),
@@ -86,7 +91,12 @@ class SubscriptionPage extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: Row(
         children: [
-          const Icon(Icons.check_circle, color: Colors.green, size: 20),
+          CircleAvatar(
+            backgroundColor: Colors.green.shade100,
+            radius: 15,
+            child: Icon(Icons.check,
+                color: Colors.green.withOpacity(0.8), size: 20),
+          ),
           const SizedBox(width: 8),
           Expanded(
             child: Text(
@@ -98,31 +108,6 @@ class SubscriptionPage extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  // Build Renew Plan Button
-  Widget _buildRenewButton() {
-    return SizedBox(
-      width: double.infinity,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.purple,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          padding: const EdgeInsets.symmetric(vertical: 16),
-        ),
-        onPressed: () {},
-        child: const Text(
-          "Renew Plan",
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-            color: Colors.white,
-          ),
-        ),
       ),
     );
   }
