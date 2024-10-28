@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:seekers/pages/walletpage/profile_settings_page.dart';
+import 'package:seekers/pages/walletpage/subscriptions_plans_page.dart';
 
 class WalletPage extends StatelessWidget {
   const WalletPage({super.key});
@@ -27,7 +28,7 @@ class WalletPage extends StatelessWidget {
                     color: Colors.purple),
               ),
             ),
-            _buildSubscriptionCard(),
+            _buildSubscriptionCard(context),
             _buildTransactionList(context),
           ],
         ),
@@ -111,7 +112,7 @@ class WalletPage extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white.withOpacity(0.1),
+                  backgroundColor: Colors.white.withOpacity(0.3),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
@@ -125,25 +126,33 @@ class WalletPage extends StatelessWidget {
     );
   }
 
-  Widget _buildSubscriptionCard() {
+  Widget _buildSubscriptionCard(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: Card(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(
-                "Socian Starter ksh 500/mth",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                    color: Colors.purple),
-              ),
-              FilledButton.tonal(
-                  onPressed: () {}, child: const Text("Upgrade plan"))
-            ],
+      child: InkWell(
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const SubscriptionPage()));
+        },
+        child: Card(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  "Socian Starter ksh 500/mth",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color: Colors.purple),
+                ),
+                FilledButton.tonal(
+                    onPressed: () {}, child: const Text("Upgrade plan"))
+              ],
+            ),
           ),
         ),
       ),

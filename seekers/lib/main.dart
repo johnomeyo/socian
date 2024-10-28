@@ -30,6 +30,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: appTheme,
-        home:  WalletPage());
+        home: const WalletPage());
   }
 }
