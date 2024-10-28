@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
           padding: EdgeInsets.only(left: 16, top: 10),
           child: CircleAvatar(
             backgroundImage: NetworkImage(
-                "https://s3-alpha-sig.figma.com/img/d252/5c23/41ac11fd8f67a5f633eadace725fee4b?Expires=1730073600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qBRYkub-H-bMLM7bCpX4XPn4NnC7~gMwLjG4OkgqTXUpaUBC6p7dwXIbjq5a8YrVdhRTzGEN5Bi2Jkfjpy6qSJgOBSY7kNekS5DPShf52lcu0cRrZt3SQnm5gkvLaAgc1JohH-Gb6qbVWZD3Van5fgJX7coq8M1xTdroWknd4111FSgA7LgayiEKy6i2VADGSittPwrnUvLgBQSm20xtLB826D~CflWvRoUjcGRsM~uEHuFDm2YaWtxlpvcXDOnLJBvkxAYxD4SL52~1rTcMESnVes5-V4-mKd8EputqanNGHVzUbA2EhQjRlLfYN-azxO~JPQfP2vGyU9g8fzbumg__"),
+                "https://img.freepik.com/free-photo/hopeful-happy-young-african-american-woman-smiling-joyful-pointing-upper-left-corner_176420-26983.jpg?ga=GA1.1.1970646479.1724950408&semt=ais_hybrid"),
           ),
         ),
         actions: [
