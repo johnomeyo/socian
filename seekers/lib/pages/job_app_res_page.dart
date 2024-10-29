@@ -25,7 +25,7 @@ class _ApplicationResponsePageState extends State<ApplicationResponsePage> {
         ? "You've been selected for the job. Click 'Start Working'"
         : "Your skills are valuable, but this role has been filled. Discover more opportunities and be the first to find your next fit with Socian.";
     final imagePath =
-        isSuccess ? 'assets/celebrating.png' : 'assets/rejection.png';
+        isSuccess ? 'assets/success.png' : 'assets/failure.png';
     final buttonText = isSuccess ? "START WORKING" : "EXPLORE JOBS";
 
     return Scaffold(
@@ -33,9 +33,9 @@ class _ApplicationResponsePageState extends State<ApplicationResponsePage> {
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: size.height * 0.15),
-
+            // SizedBox(height: size.height * 0.18),
             // Reusable header for title and subtitle
             AuthHeader(
               title: title,

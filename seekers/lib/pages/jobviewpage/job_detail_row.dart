@@ -16,8 +16,8 @@ class JobDetailRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(label, style: const TextStyle(fontSize: 17)),
-        Text(value, style: const TextStyle(fontWeight: FontWeight.bold)),
+        Text(label, style: const TextStyle(fontSize: 17, color: Colors.black)),
+        Text(value, style: const TextStyle(fontWeight: FontWeight.bold , color: Colors.black87)),
       ],
     );
   }

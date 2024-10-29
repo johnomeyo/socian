@@ -47,8 +47,8 @@ class LoanBanner extends StatelessWidget {
         Positioned(
             right: 0,
             bottom: 0,
-            child: Image.network(
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsmtRqeJY7CbLHXzjGed_1wxS-CTCnp8_IPA&s",
+            child: Image.asset(
+              "assets/pointing_customer.png",
               height: 160,
             ))
       ]),

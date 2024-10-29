@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:seekers/auth/auth_button.dart';
 import 'package:seekers/auth/auth_header.dart';
 import 'package:seekers/auth/custom_button.dart';
+import 'package:seekers/auth/custom_checkbox.dart';
 import 'package:seekers/auth/custom_textfield.dart';
 import 'package:seekers/auth/sign_up.dart';
 
@@ -43,6 +44,7 @@ class LoginPage extends StatelessWidget {
                 hintText: '*********',
               ),
               const SizedBox(height: 20),
+              const RememberMeForgotPassword(),
               CustomButton(
                 text: "LOGIN",
                 onPressed: () {
