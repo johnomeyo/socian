@@ -23,7 +23,7 @@ class ProfilePage extends StatelessWidget {
       children: [
         // Background gradient
         Container(
-          height: 250,
+          height: 230,
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [Colors.deepPurpleAccent, Colors.purpleAccent],
@@ -31,8 +31,8 @@ class ProfilePage extends StatelessWidget {
               end: Alignment.bottomRight,
             ),
             borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(40),
-              bottomRight: Radius.circular(40),
+              bottomLeft: Radius.circular(24),
+              bottomRight: Radius.circular(24),
             ),
           ),
         ),
@@ -42,14 +42,14 @@ class ProfilePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(width: 30),
+              SizedBox(height: 30),
               CircleAvatar(
                 radius: 24,
                 backgroundImage: NetworkImage(
                   'https://images.unsplash.com/photo-1499651681375-8afc5a4db253?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c21pbGluZyUyMGZhY2V8ZW58MHx8MHx8fDA%3D', // Use a real image URL
                 ),
               ),
-              SizedBox(width: 20),
+              SizedBox(height: 20),
               Text(
                 'Orlando Diggs',
                 style: TextStyle(
@@ -66,7 +66,7 @@ class ProfilePage extends StatelessWidget {
                   fontSize: 16,
                 ),
               ),
-              SizedBox(height: 8),
+              SizedBox(height: 20),
               // Rating
               Row(
                 children: [
@@ -77,9 +77,7 @@ class ProfilePage extends StatelessWidget {
                       fontSize: 16,
                     ),
                   ),
-                  SizedBox(
-                    width: 10,
-                  ),
+                  Spacer(),
                   Icon(Icons.star, color: Colors.amber),
                   Text(
                     '5.0 Rating',

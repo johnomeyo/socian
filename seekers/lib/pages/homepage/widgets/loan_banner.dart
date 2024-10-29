@@ -48,7 +48,7 @@ class LoanBanner extends StatelessWidget {
             right: 0,
             bottom: 0,
             child: Image.network(
-              "https://s3-alpha-sig.figma.com/img/d252/5c23/41ac11fd8f67a5f633eadace725fee4b?Expires=1730073600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qBRYkub-H-bMLM7bCpX4XPn4NnC7~gMwLjG4OkgqTXUpaUBC6p7dwXIbjq5a8YrVdhRTzGEN5Bi2Jkfjpy6qSJgOBSY7kNekS5DPShf52lcu0cRrZt3SQnm5gkvLaAgc1JohH-Gb6qbVWZD3Van5fgJX7coq8M1xTdroWknd4111FSgA7LgayiEKy6i2VADGSittPwrnUvLgBQSm20xtLB826D~CflWvRoUjcGRsM~uEHuFDm2YaWtxlpvcXDOnLJBvkxAYxD4SL52~1rTcMESnVes5-V4-mKd8EputqanNGHVzUbA2EhQjRlLfYN-azxO~JPQfP2vGyU9g8fzbumg__",
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsmtRqeJY7CbLHXzjGed_1wxS-CTCnp8_IPA&s",
               height: 160,
             ))
       ]),

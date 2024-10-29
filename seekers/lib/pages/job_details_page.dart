@@ -18,7 +18,7 @@ const kSubTitleTextStyle = TextStyle(
 );
 
 const kBodyTextStyle = TextStyle(
-  fontSize: 19,
+  fontSize: 17,
   color: kAccentColor,
 );
 
@@ -51,6 +51,7 @@ class JobDetailsPage extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
+              // const Spacer(),
               CustomButton(
                   text: "GET JOB",
                   onPressed: () {
@@ -81,7 +82,7 @@ class JobHeader extends StatelessWidget {
         CircleAvatar(
           radius: 40,
           backgroundImage: NetworkImage(
-              "https://s3-alpha-sig.figma.com/img/e6a8/e58a/33b5ab9278017f8c6e6050f415bf8792?Expires=1730073600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=cU6K2wsVf53bqDT4JV44OjQ-n3aBk2mhXB9Krld0uJGfjzRp2LZDIETjjVG7ls2swYXqXEAHH9Y5tJxlOOqGROhDRbl7G83hTflf9BATKR0nk2wAPLY5g6d31Pa9enYPnIum-TIg~tq3~9HDJXk9QzBK5aueBZLcga-6iJf0K9wqfw-q0jTHxQk4Ia2iI2FMkE6Gbcqo2rpD6NKSnrdOwj0Xnm5ULwZbZ5xXi-aRnMXIrYaYT-P5e9KDu32xnhHRrl1KFu0xC933GgcALiJqQUhbQKdgkfHEZW6-8YMf-FwKoV9tFcrcJoXM4FMWo1Cn9nK~deiy6uaVI5a86FFe4w__"),
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsmtRqeJY7CbLHXzjGed_1wxS-CTCnp8_IPA&s"),
         ),
         SizedBox(height: 20),
         Text('Waiter', style: kTitleTextStyle),
