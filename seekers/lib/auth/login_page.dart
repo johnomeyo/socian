@@ -1,10 +1,10 @@
 // pages/login_page.dart
 import 'package:flutter/material.dart';
-import 'package:seekers/auth/auth_button.dart';
 import 'package:seekers/auth/auth_header.dart';
 import 'package:seekers/auth/custom_button.dart';
 import 'package:seekers/auth/custom_checkbox.dart';
 import 'package:seekers/auth/custom_textfield.dart';
+import 'package:seekers/auth/google_sign_in_btn.dart';
 import 'package:seekers/auth/sign_up.dart';
 
 class LoginPage extends StatelessWidget {
@@ -52,11 +52,8 @@ class LoginPage extends StatelessWidget {
                 },
               ),
               const SizedBox(height: 20),
-              AuthButton(
-                text: "SIGN IN WITH GOOGLE",
-                onPressed: () {
-                  // Handle Google Sign-In
-                },
+              GoogleSignInButton(
+                onPressed: () {},
               ),
               const SizedBox(height: 20),
               TextButton(
