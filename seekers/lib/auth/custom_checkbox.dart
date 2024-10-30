@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seekers/auth/forgot_password/forgot_password_page.dart';
 
 class RememberMeForgotPassword extends StatefulWidget {
   final String text;
@@ -33,9 +34,9 @@ class _RememberMeForgotPasswordState extends State<RememberMeForgotPassword> {
                 });
               },
             ),
-             Text(
+            Text(
               widget.text,
-              style:const TextStyle(
+              style: const TextStyle(
                 fontSize: 16.0,
                 color: Colors.grey,
               ),
@@ -46,7 +47,10 @@ class _RememberMeForgotPasswordState extends State<RememberMeForgotPassword> {
         TextButton(
           onPressed: () {
             // Handle forgot password tap
-            print("Forgot Password Tapped");
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const ForgotPasswordPage()));
           },
           child: const Text(
             "Forgot Password ?",
