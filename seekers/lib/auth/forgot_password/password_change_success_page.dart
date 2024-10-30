@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:seekers/auth/auth_header.dart';
 import 'package:seekers/auth/custom_button.dart';
-import 'package:seekers/auth/custom_textfield.dart';
-import 'package:seekers/auth/forgot_password/password_change_success_page.dart';
 import 'package:seekers/auth/forgot_password/pink_button.dart';
 
-class ForgotPasswordPage extends StatelessWidget {
-  const ForgotPasswordPage({super.key});
+class PasswordChangeSuccessPage extends StatelessWidget {
+  const PasswordChangeSuccessPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final emailController = TextEditingController();
     final size = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       body: Padding(
@@ -22,34 +20,33 @@ class ForgotPasswordPage extends StatelessWidget {
           children: [
             SizedBox(height: size.height * 0.15),
             const AuthHeader(
-                title: "Forgot Password?",
+                title: "Successfully",
                 subtitle:
-                    "To reset your password you need your email or mobile number that can be authenticated"),
+                    "Your password has been updated, please change your password regularly to avoid this happening"),
             const SizedBox(
               height: 60,
             ),
-            Image.asset("assets/forgot_password.png", height: 100,),
+            Image.asset(
+              "assets/success_pass_change.png",
+              height: 100,
+            ),
             const SizedBox(
               height: 60,
             ),
-            CustomTextField(
-                labelText: "Email",
-                controller: emailController,
-                hintText: "johndoe@gmail.com"),
             const SizedBox(
               height: 20,
             ),
             CustomButton(
-              text: "RESET PASSWORD",
+              text: "CONTINUE",
               onPressed: () {
                 // Handle login logic
-                 Navigator.push(context, MaterialPageRoute(builder: (context) => const PasswordChangeSuccessPage()));
+               
               },
             ),
             const SizedBox(
               height: 20,
             ),
-          const  PinkButton()
+            const PinkButton()
           ],
         ),
       ),

@@ -13,7 +13,7 @@ class GoogleSignInButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.purpleAccent.withOpacity(0.5), // Button color
+        backgroundColor: Colors.purple[200], // Button color
         elevation: 2,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
@@ -33,7 +33,7 @@ class GoogleSignInButton extends StatelessWidget {
             'SIGN IN WITH GOOGLE',
             style: TextStyle(
               fontSize: 16.0,
-              color: Colors.black,
+              color: Colors.white,
               fontWeight: FontWeight.bold,
             ),
           ),

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:seekers/auth/login_page.dart';
 
 class PinkButton extends StatelessWidget {
-  final VoidCallback onPressed;
-
   const PinkButton({
     super.key,
-    required this.onPressed,
   });
 
   @override
@@ -20,7 +18,10 @@ class PinkButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
         ),
-        onPressed: onPressed,
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => LoginPage()));
+        },
         child: const Text(
           "BACK TO LOGIN",
           style: TextStyle(fontSize: 16, color: Colors.white),
