@@ -1,6 +1,7 @@
 // pages/login_page.dart
 import 'package:flutter/material.dart';
 import 'package:seekers/auth/auth_header.dart';
+import 'package:seekers/auth/auth_navigation_text.dart';
 import 'package:seekers/auth/custom_button.dart';
 import 'package:seekers/auth/custom_checkbox.dart';
 import 'package:seekers/auth/custom_textfield.dart';
@@ -17,6 +18,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.grey.shade200,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
@@ -44,7 +46,9 @@ class LoginPage extends StatelessWidget {
                 hintText: '*********',
               ),
               const SizedBox(height: 20),
-              const RememberMeForgotPassword(),
+              const RememberMeForgotPassword(
+                text: 'Remember Me',
+              ),
               CustomButton(
                 text: "LOGIN",
                 onPressed: () {
@@ -56,14 +60,14 @@ class LoginPage extends StatelessWidget {
                 onPressed: () {},
               ),
               const SizedBox(height: 20),
-              TextButton(
+              AuthNavigationText(
+                beginningText: "Dont have an account? ",
+                clickableText: "Sign Up",
                 onPressed: () {
-                  // Navigate to signup page
-                  Navigator.push(context,
+                  Navigator.push((context),
                       MaterialPageRoute(builder: (context) => SignupPage()));
                 },
-                child: const Text("Don't have an account yet? Sign up"),
-              ),
+              )
             ],
           ),
         ),

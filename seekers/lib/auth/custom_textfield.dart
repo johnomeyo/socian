@@ -34,7 +34,7 @@ class CustomTextField extends StatelessWidget {
         Container(
           height: 50,
           decoration: BoxDecoration(
-              color: Colors.grey[100], borderRadius: BorderRadius.circular(8)),
+              color: Colors.white, borderRadius: BorderRadius.circular(8)),
           child: Center(
             child: TextField(
               controller: controller,
@@ -45,7 +45,7 @@ class CustomTextField extends StatelessWidget {
                 hintStyle: const TextStyle(color: Colors.grey),
                 hintText: hintText,
                 border: InputBorder.none,
-                suffixIcon: isPassword ? const Icon(Icons.visibility) : null,
+                suffixIcon: isPassword ? const Icon(Icons.visibility, color: Colors.grey,) : null,
               ),
             ),
           ),

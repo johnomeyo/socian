@@ -1,9 +1,12 @@
 // pages/signup_page.dart
 import 'package:flutter/material.dart';
-import 'package:seekers/auth/auth_button.dart';
 import 'package:seekers/auth/auth_header.dart';
+import 'package:seekers/auth/auth_navigation_text.dart';
 import 'package:seekers/auth/custom_button.dart';
+import 'package:seekers/auth/custom_checkbox.dart';
 import 'package:seekers/auth/custom_textfield.dart';
+import 'package:seekers/auth/google_sign_in_btn.dart';
+import 'package:seekers/auth/login_page.dart';
 
 class SignupPage extends StatelessWidget {
   final TextEditingController nameController = TextEditingController();
@@ -15,8 +18,9 @@ class SignupPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-      final size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.grey.shade200,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
@@ -24,7 +28,7 @@ class SignupPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: size.height * 0.15),
+              SizedBox(height: size.height * 0.10),
               const AuthHeader(
                   title: "Create an Account",
                   subtitle:
@@ -57,6 +61,7 @@ class SignupPage extends StatelessWidget {
                 hintText: '*******',
               ),
               const SizedBox(height: 20),
+               const RememberMeForgotPassword(text: 'Terms and Conditions',),  
               CustomButton(
                 text: "SIGN UP",
                 onPressed: () {
@@ -64,19 +69,18 @@ class SignupPage extends StatelessWidget {
                 },
               ),
               const SizedBox(height: 20),
-              AuthButton(
-                text: "SIGN UP WITH GOOGLE",
-                onPressed: () {
-                  // Handle Google Sign-Up
-                },
+              GoogleSignInButton(
+                onPressed: () {},
               ),
-              const SizedBox(height: 20),
-              TextButton(
+              const SizedBox(height: 10),
+              AuthNavigationText(
+                beginningText: "Already have an account? ",
+                clickableText: "Sign In",
                 onPressed: () {
-                  // Navigate to login page
+                  Navigator.push((context),
+                      MaterialPageRoute(builder: (context) => LoginPage()));
                 },
-                child: const Text("Already have an account? Sign in"),
-              ),
+              )
             ],
           ),
         ),

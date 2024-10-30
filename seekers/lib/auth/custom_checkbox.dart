@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class RememberMeForgotPassword extends StatefulWidget {
-  const RememberMeForgotPassword({super.key});
+  final String text;
+  const RememberMeForgotPassword({super.key, required this.text});
 
   @override
   State<RememberMeForgotPassword> createState() =>
@@ -25,15 +26,16 @@ class _RememberMeForgotPasswordState extends State<RememberMeForgotPassword> {
                 borderRadius: BorderRadius.circular(4.0),
               ),
               value: _isRememberMeChecked,
+              semanticLabel: "Check Box",
               onChanged: (bool? value) {
                 setState(() {
                   _isRememberMeChecked = value ?? false;
                 });
               },
             ),
-            const Text(
-              "Remember me",
-              style: TextStyle(
+             Text(
+              widget.text,
+              style:const TextStyle(
                 fontSize: 16.0,
                 color: Colors.grey,
               ),
