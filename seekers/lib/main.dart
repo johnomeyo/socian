@@ -3,6 +3,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 // import 'package:seekers/pages/homepage/homepage.dart';
 import 'package:provider/provider.dart';
 import 'package:seekers/pages/homepage/homepage.dart';
+import 'package:seekers/pages/homepage/timed_homepage.dart';
 import 'package:seekers/pages/profile/profile_page.dart';
 import 'package:seekers/pages/walletpage/wallet_page.dart';
 import 'package:seekers/providers/skills_provider.dart';
@@ -52,7 +53,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: IndexedStack(
         index: selectedIndex,
-        children: const [HomePage(), WalletPage(), ProfilePage()],
+        children: const [TimedHomePage(), WalletPage(), ProfilePage()],
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
