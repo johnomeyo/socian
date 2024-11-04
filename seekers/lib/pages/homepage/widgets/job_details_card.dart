@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:seekers/pages/homepage/widgets/accept_reject_btn.dart';
+import 'package:seekers/pages/job_details_page.dart';
 
 class JobDetailsCard extends StatelessWidget {
   const JobDetailsCard({super.key});
@@ -56,7 +57,12 @@ class JobDetailsCard extends StatelessWidget {
               ),
               const Spacer(),
               AcceptRejectBtn(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const JobDetailsPage()));
+                },
                 color: Colors.green,
                 text: 'ACCEPT',
               ),

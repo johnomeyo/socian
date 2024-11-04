@@ -129,30 +129,28 @@ class WalletPage extends StatelessWidget {
   Widget _buildSubscriptionCard(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: InkWell(
-        onTap: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => const SubscriptionPage()));
-        },
-        child: Card(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  "Socian Starter ksh 500/mth",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                      color: Colors.purple),
-                ),
-                FilledButton.tonal(
-                    onPressed: () {}, child: const Text("Upgrade plan"))
-              ],
-            ),
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                "Socian Starter ksh 500/mth",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                    color: Colors.purple),
+              ),
+              FilledButton.tonal(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SubscriptionPage()));
+                  },
+                  child: const Text("Upgrade plan"))
+            ],
           ),
         ),
       ),
