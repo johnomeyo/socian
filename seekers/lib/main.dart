@@ -92,7 +92,17 @@ class HomeController extends StatefulWidget {
 class HomeControllerState extends State<HomeController> {
   bool _isJobOfferDisplayed = false;
   Timer? _timer;
+  void rejectJob() {
+    // Cancel the timer when rejecting
+    _timer?.cancel();
 
+    setState(() {
+      _isJobOfferDisplayed = false;
+    });
+
+    // Logic to handle job rejection (e.g., update backend, show message)
+    print("Job has been rejected");
+  }
   void showTimedHomePage() {
     setState(() {
       _isJobOfferDisplayed = true;
@@ -114,7 +124,7 @@ class HomeControllerState extends State<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    return _isJobOfferDisplayed ? TimedHomePage(onTimeout: showTimedHomePage) : HomePage(onJobPosted: showTimedHomePage);
+    return _isJobOfferDisplayed ? TimedHomePage(onReject: rejectJob) : HomePage(onJobPosted: showTimedHomePage);
   }
 }
 
