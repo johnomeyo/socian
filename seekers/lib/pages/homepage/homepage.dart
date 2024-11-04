@@ -6,7 +6,8 @@ import 'package:seekers/pages/homepage/widgets/loan_banner.dart';
 import 'package:seekers/pages/homepage/widgets/recent_job_lists.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  final VoidCallback onJobPosted;
+  const HomePage({super.key, required this.onJobPosted});
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +51,7 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(onPressed: onJobPosted, child: const Icon(Icons.add),),
     );
   }
 }

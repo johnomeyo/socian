@@ -24,8 +24,7 @@ class _ApplicationResponsePageState extends State<ApplicationResponsePage> {
     final subtitle = isSuccess
         ? "You've been selected for the job. Click 'Start Working'"
         : "Your skills are valuable, but this role has been filled. Discover more opportunities and be the first to find your next fit with Socian.";
-    final imagePath =
-        isSuccess ? 'assets/success.png' : 'assets/failure.png';
+    final imagePath = isSuccess ? 'assets/success.png' : 'assets/failure.png';
     final buttonText = isSuccess ? "START WORKING" : "EXPLORE JOBS";
 
     return Scaffold(
@@ -70,7 +69,10 @@ class _ApplicationResponsePageState extends State<ApplicationResponsePage> {
         ? Navigator.push(context,
             MaterialPageRoute(builder: (context) => const ViewJobPage()))
         : Navigator.push(
-            context, MaterialPageRoute(builder: (context) =>const HomePage()));
-
+            context,
+            MaterialPageRoute(
+                builder: (context) => HomePage(
+                      onJobPosted: () {},
+                    )));
   }
 }

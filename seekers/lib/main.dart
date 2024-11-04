@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:provider/provider.dart';
+import 'package:seekers/pages/homepage/homepage.dart';
 import 'package:seekers/pages/homepage/timed_homepage.dart';
 import 'package:seekers/pages/profile/profile_page.dart';
 import 'package:seekers/pages/walletpage/wallet_page.dart';
@@ -51,7 +54,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: IndexedStack(
         index: selectedIndex,
-        children: const [TimedHomePage(), WalletPage(), ProfilePage()],
+        children: const [HomeController(), WalletPage(), ProfilePage()],
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
@@ -70,10 +73,95 @@ class _MainScreenState extends State<MainScreen> {
           ),
         ],
         currentIndex: selectedIndex,
-        selectedItemColor: Theme.of(context).colorScheme.secondary,
-        unselectedItemColor: Theme.of(context).colorScheme.onSurface,
+        selectedItemColor: Colors.purple,
+        // selectedItemColor: Theme.of(context).colorScheme.secondary,
+        // unselectedItemColor: Theme.of(context).colorScheme.onSurface,
         onTap: onItemTapped,
       ),
     );
   }
 }
+
+class HomeController extends StatefulWidget {
+  const HomeController({super.key});
+
+  @override
+  HomeControllerState createState() => HomeControllerState();
+}
+
+class HomeControllerState extends State<HomeController> {
+  bool _isJobOfferDisplayed = false;
+  Timer? _timer;
+
+  void showTimedHomePage() {
+    setState(() {
+      _isJobOfferDisplayed = true;
+    });
+
+    // Start a timer to switch back after 30 seconds
+    _timer = Timer(const Duration(seconds: 5), () {
+      setState(() {
+        _isJobOfferDisplayed = false;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel(); // Cancel the timer if the widget is disposed
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return _isJobOfferDisplayed ? TimedHomePage(onTimeout: showTimedHomePage) : HomePage(onJobPosted: showTimedHomePage);
+  }
+}
+
+// class HomePage extends StatelessWidget {
+//   final VoidCallback onJobPosted;
+
+//   const HomePage({super.key, required this.onJobPosted});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: const Text('Home Page')),
+//       body: Center(
+//         child: ElevatedButton(
+//           onPressed: onJobPosted,
+//           child: const Text("Post a Job Offer"),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class TimedHomePage extends StatelessWidget {
+//   final VoidCallback onTimeout;
+
+//   const TimedHomePage({super.key, required this.onTimeout});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: const Text('New Job Offer')),
+//       body: Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             const Text(
+//               "You have a new job offer!",
+//               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+//             ),
+//             const SizedBox(height: 20),
+//             ElevatedButton(
+//               onPressed: onTimeout,
+//               child: const Text("Dismiss"),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }

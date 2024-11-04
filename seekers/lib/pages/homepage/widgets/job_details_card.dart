@@ -3,7 +3,8 @@ import 'package:seekers/pages/homepage/widgets/accept_reject_btn.dart';
 import 'package:seekers/pages/job_details_page.dart';
 
 class JobDetailsCard extends StatelessWidget {
-  const JobDetailsCard({super.key});
+  final Function()? rejectBtnPressed ;
+  const JobDetailsCard({super.key, this.rejectBtnPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +54,7 @@ class JobDetailsCard extends StatelessWidget {
               AcceptRejectBtn(
                 color: Colors.red,
                 text: 'REJECT',
-                onPressed: () {},
+                onPressed: rejectBtnPressed,
               ),
               const Spacer(),
               AcceptRejectBtn(
@@ -72,4 +73,5 @@ class JobDetailsCard extends StatelessWidget {
       ),
     );
   }
+
 }

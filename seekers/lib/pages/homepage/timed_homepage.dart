@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:seekers/pages/homepage/widgets/job_details_card.dart';
 
 class TimedHomePage extends StatelessWidget {
-  const TimedHomePage({super.key});
+  final VoidCallback onTimeout;
+
+  const TimedHomePage({super.key, required this.onTimeout});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,9 @@ class TimedHomePage extends StatelessWidget {
             height: size.height * 0.7,
           ),
           const SizedBox(height: 20),
-          const JobDetailsCard()
+          JobDetailsCard(
+            rejectBtnPressed: onTimeout,
+          )
         ]),
       ),
     );
