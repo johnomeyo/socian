@@ -104,46 +104,46 @@ class ProfilePage extends StatelessWidget {
             text: 'Edit Profile',
             onTap: () => _onMenuItemTap('Edit Profile'),
           ),
-          _buildMenuItem(
-            icon: Icons.work_outline,
-            text: 'Personal Profile',
-            onTap: () => _onMenuItemTap('Personal Profile'),
-          ),
-          _buildMenuItem(
-            icon: Icons.notifications_outlined,
-            text: 'Notifications',
-            onTap: () => _onMenuItemTap('Notifications'),
-          ),
-          _buildMenuItem(
-            icon: Icons.payment_outlined,
-            text: 'Payment',
-            onTap: () => _onMenuItemTap('Payment'),
-          ),
-          _buildMenuItem(
-            icon: Icons.security_outlined,
-            text: 'Security',
-            onTap: () => _onMenuItemTap('Security'),
-          ),
-          _buildMenuItem(
-            icon: Icons.language_outlined,
-            text: 'Language',
-            trailing: const Text('English (US)',
-                style: TextStyle(color: Colors.grey)),
-            onTap: () => _onMenuItemTap('Language'),
-          ),
-          _buildMenuItemWithSwitch(
-            icon: Icons.nightlight_round_outlined,
-            text: 'Dark Mode',
-            value: false,
-            onChanged: (bool isEnabled) {
-              // Handle dark mode toggle here
-            },
-          ),
-          _buildMenuItem(
-            icon: Icons.help_outline,
-            text: 'Help Center',
-            onTap: () => _onMenuItemTap('Help Center'),
-          ),
+          // _buildMenuItem(
+          //   icon: Icons.work_outline,
+          //   text: 'Personal Profile',
+          //   onTap: () => _onMenuItemTap('Personal Profile'),
+          // ),
+          // _buildMenuItem(
+          //   icon: Icons.notifications_outlined,
+          //   text: 'Notifications',
+          //   onTap: () => _onMenuItemTap('Notifications'),
+          // ),
+          // _buildMenuItem(
+          //   icon: Icons.payment_outlined,
+          //   text: 'Payment',
+          //   onTap: () => _onMenuItemTap('Payment'),
+          // ),
+          // _buildMenuItem(
+          //   icon: Icons.security_outlined,
+          //   text: 'Security',
+          //   onTap: () => _onMenuItemTap('Security'),
+          // ),
+          // _buildMenuItem(
+          //   icon: Icons.language_outlined,
+          //   text: 'Language',
+          //   trailing: const Text('English (US)',
+          //       style: TextStyle(color: Colors.grey)),
+          //   onTap: () => _onMenuItemTap('Language'),
+          // ),
+          // _buildMenuItemWithSwitch(
+          //   icon: Icons.nightlight_round_outlined,
+          //   text: 'Dark Mode',
+          //   value: false,
+          //   onChanged: (bool isEnabled) {
+          //     // Handle dark mode toggle here
+          //   },
+          // ),
+          // _buildMenuItem(
+          //   icon: Icons.help_outline,
+          //   text: 'Help Center',
+          //   onTap: () => _onMenuItemTap('Help Center'),
+          // ),
           _buildMenuItem(
             icon: Icons.share_outlined,
             text: 'Invite Friends',

@@ -12,6 +12,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -51,7 +52,10 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: onJobPosted, child: const Icon(Icons.add),),
+      floatingActionButton: FloatingActionButton(
+        onPressed: onJobPosted,
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }

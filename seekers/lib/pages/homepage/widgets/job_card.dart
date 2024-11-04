@@ -8,8 +8,9 @@ class JobCard extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: Card(
+        color: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        elevation: 4,
+        // elevation: 4,
         child: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Column(
