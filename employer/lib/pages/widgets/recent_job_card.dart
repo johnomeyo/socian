@@ -11,7 +11,7 @@ class RecentJobList extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Recent Job List',
+          'Your Recent Job Post',
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,

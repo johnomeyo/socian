@@ -19,10 +19,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const  MainScreen(),
+      home: const MainScreen(),
     );
   }
 }
+
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
@@ -63,8 +64,7 @@ class _MainScreenState extends State<MainScreen> {
         ],
         currentIndex: selectedIndex,
         selectedItemColor: Colors.purple,
-        // selectedItemColor: Theme.of(context).colorScheme.secondary,
-        // unselectedItemColor: Theme.of(context).colorScheme.onSurface,
+        unselectedItemColor: Colors.grey,
         onTap: onItemTapped,
       ),
     );

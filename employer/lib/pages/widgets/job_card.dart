@@ -120,7 +120,7 @@ class JobCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
-              child: const Text('Get the Job'),
+              child: const Text('Approved'),
             ),
           ],
         )

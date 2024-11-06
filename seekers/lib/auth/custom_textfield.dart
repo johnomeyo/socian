@@ -45,7 +45,12 @@ class CustomTextField extends StatelessWidget {
                 hintStyle: const TextStyle(color: Colors.grey),
                 hintText: hintText,
                 border: InputBorder.none,
-                suffixIcon: isPassword ? const Icon(Icons.visibility, color: Colors.grey,) : null,
+                suffixIcon: isPassword
+                    ? const Icon(
+                        Icons.visibility,
+                        color: Colors.grey,
+                      )
+                    : null,
               ),
             ),
           ),

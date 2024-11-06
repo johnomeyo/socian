@@ -1,3 +1,4 @@
+import 'package:employer/pages/postjob/post_job.dart';
 import 'package:flutter/material.dart';
 
 // Job Categories Widget
@@ -74,14 +75,14 @@ class JobCategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      // onTap: () {
-      //   Navigator.push(
-      //       context,
-      //       MaterialPageRoute(
-      //           builder: (context) => JobListPage(
-      //                 title: title,
-      //               )));
-      // },
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => PostJobPage(
+                      title: title,
+                    )));
+      },
       child: Container(
         width: width,
         height: height,

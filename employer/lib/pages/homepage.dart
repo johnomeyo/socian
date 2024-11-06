@@ -19,22 +19,22 @@ class HomePage extends StatelessWidget {
           padding: EdgeInsets.only(left: 16, top: 10),
           child: CircleAvatar(
             backgroundImage: NetworkImage(
-                "https://img.freepik.com/free-photo/hopeful-happy-young-african-american-woman-smiling-joyful-pointing-upper-left-corner_176420-26983.jpg?ga=GA1.1.1970646479.1724950408&semt=ais_hybrid"),
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsmtRqeJY7CbLHXzjGed_1wxS-CTCnp8_IPA&s"),
           ),
         ),
-        actions: const [
-           Padding(
-            padding:EdgeInsets.only(right: 16, top: 10),
-            child: InkWell(
-              // onTap: () => Navigator.push(context,
-              //     MaterialPageRoute(builder: (context) => LoginPage()))
-              //     ,
-              child: Column(
-                children: [Icon(Icons.notifications), Text("Offline")],
-              ),
-            ),
-          )
-        ],
+        // actions: const [
+        //    Padding(
+        //     padding:EdgeInsets.only(right: 16, top: 10),
+        //     child: InkWell(
+        //       // onTap: () => Navigator.push(context,
+        //       //     MaterialPageRoute(builder: (context) => LoginPage()))
+        //       //     ,
+        //       child: Column(
+        //         children: [Icon(Icons.notifications), Text("Offline")],
+        //       ),
+        //     ),
+        //   )
+        // ],
       ),
       body: const SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
@@ -42,7 +42,7 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(width: 10),
-            GreetingWidget(name: 'Orlando Diggs'),
+            GreetingWidget(name: 'Java House'),
             SizedBox(height: 20),
             LoanBanner(),
             SizedBox(height: 20),

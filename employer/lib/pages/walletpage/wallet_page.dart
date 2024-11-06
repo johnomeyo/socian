@@ -118,7 +118,7 @@ class WalletPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                   ),
                 ),
-                child: const Text("Pay Us"),
+                child: const Text("Top Up"),
               )
             ],
           ),
