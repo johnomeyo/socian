@@ -91,7 +91,7 @@ class PostJobPageState extends State<PostJobPage> {
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
-        title: const Text("Post a Job"),
+        backgroundColor: Colors.grey.shade200,
         actions: [
           TextButton(
             onPressed: () {
@@ -113,6 +113,26 @@ class PostJobPageState extends State<PostJobPage> {
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 20),
+            const Row(
+              children: [
+                CircleAvatar(
+                  radius: 24,
+                  backgroundImage: NetworkImage(
+                      'https://via.placeholder.com/150'), // Replace with your image URL
+                ),
+                SizedBox(width: 16),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Java House",
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold)),
+                    Text("Nairobi, KE", style: TextStyle(color: Colors.grey)),
+                  ],
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
             _buildDropdownField("Skill", skillController, skills),
             _buildDropdownField("Number of Socians", numberOfSociansController,
                 numberOfSocians),
@@ -120,6 +140,9 @@ class PostJobPageState extends State<PostJobPage> {
             _buildDropdownField("Hour of work", hoursOfWorkController, hours),
             _buildTextField("Amount pay/Hr", amountPayController),
             _buildDatePickerRow(),
+            const SizedBox(
+              height: 10,
+            ),
             _buildTimePickerRow(),
             _buildTextField("Location", locationController),
             _buildTextField("Job Description", jobDescriptionController,
@@ -140,7 +163,8 @@ class PostJobPageState extends State<PostJobPage> {
         controller: controller,
         maxLines: maxLines,
         decoration: InputDecoration(
-          labelText: label,
+          hintText: label,
+          hintStyle: const TextStyle(color: Colors.grey),
           filled: true,
           fillColor: Colors.white,
           border: OutlineInputBorder(
@@ -158,7 +182,8 @@ class PostJobPageState extends State<PostJobPage> {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: DropdownButtonFormField<String>(
         decoration: InputDecoration(
-          labelText: label,
+          hintText: label,
+          hintStyle: const TextStyle(color: Colors.grey),
           filled: true,
           fillColor: Colors.white,
           border: OutlineInputBorder(
@@ -205,9 +230,13 @@ class PostJobPageState extends State<PostJobPage> {
       child: AbsorbPointer(
         child: TextField(
           decoration: InputDecoration(
-            labelText: label,
+            // labelText: label,
             filled: true,
+            hintText: label,
+            hintStyle: const TextStyle(color: Colors.grey),
+
             fillColor: Colors.white,
+
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
               borderSide: BorderSide.none,
@@ -244,7 +273,8 @@ class PostJobPageState extends State<PostJobPage> {
       child: AbsorbPointer(
         child: TextField(
           decoration: InputDecoration(
-            labelText: label,
+            hintText: label,
+            hintStyle: const TextStyle(color: Colors.grey),
             filled: true,
             fillColor: Colors.white,
             border: OutlineInputBorder(
