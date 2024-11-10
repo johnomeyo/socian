@@ -126,8 +126,11 @@ class PostJobPageState extends State<PostJobPage> {
                   children: [
                     Text("Java House",
                         style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold)),
-                    Text("Nairobi, KE", style: TextStyle(color: Colors.grey)),
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.purple)),
+                    Text("Nairobi, KE",
+                        style: TextStyle(color: Colors.deepPurple)),
                   ],
                 ),
               ],
