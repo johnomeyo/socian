@@ -11,6 +11,12 @@ class ProfilePage extends StatelessWidget {
           children: [
             _buildHeader(),
             _buildMenuItems(),
+            // Spacer(),
+             _buildMenuItem(
+            icon: Icons.logout,
+            text: 'Logout',
+            onTap: () => _onMenuItemTap('Logout'),
+          ),
           ],
         ),
       ),
@@ -148,11 +154,7 @@ class ProfilePage extends StatelessWidget {
             text: 'Invite Friends',
             onTap: () => _onMenuItemTap('Invite Friends'),
           ),
-          _buildMenuItem(
-            icon: Icons.logout,
-            text: 'Logout',
-            onTap: () => _onMenuItemTap('Logout'),
-          ),
+         
         ],
       ),
     );

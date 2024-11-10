@@ -133,21 +133,33 @@ class PostJobPageState extends State<PostJobPage> {
               ],
             ),
             const SizedBox(height: 20),
-            _buildDropdownField("Skill", skillController, skills),
-            _buildDropdownField("Number of Socians", numberOfSociansController,
-                numberOfSocians),
-            _buildTextField("Specialty", specialtyController),
-            _buildDropdownField("Hour of work", hoursOfWorkController, hours),
-            _buildTextField("Amount pay/Hr", amountPayController),
+            _buildFieldHeader("Skill*"),
+            _buildDropdownField("select", skillController, skills),
+            _buildFieldHeader("Number of Socians"),
+            _buildDropdownField("Write the number of workers you want to hire",
+                numberOfSociansController, numberOfSocians),
+            _buildFieldHeader("Speciality"),
+            _buildTextField("write the specialty you want the socian to have",
+                specialtyController),
+            _buildFieldHeader("Hour of work"),
+            _buildDropdownField("Select hours", hoursOfWorkController, hours),
+            _buildFieldHeader("Amount pay/Hr"),
+            _buildTextField(
+                "Write the amount you'll pay per hour", amountPayController),
+            _buildFieldHeader("Day of Work"),
             _buildDatePickerRow(),
             const SizedBox(
               height: 10,
             ),
+            _buildFieldHeader("Time of Work"),
             _buildTimePickerRow(),
-            _buildTextField("Location", locationController),
-            _buildTextField("Job Description", jobDescriptionController,
+            _buildFieldHeader("Job Description"),
+            _buildTextField("write the dscription of the job you're posting",
+                jobDescriptionController,
                 maxLines: 3),
-            _buildTextField("Requirements", requirementsController,
+            _buildFieldHeader("Requirements"),
+            _buildTextField("write the requirements of the job you're posting",
+                requirementsController,
                 maxLines: 3),
           ],
         ),
@@ -234,7 +246,10 @@ class PostJobPageState extends State<PostJobPage> {
             filled: true,
             hintText: label,
             hintStyle: const TextStyle(color: Colors.grey),
-
+            suffixIcon: const Icon(
+              Icons.calendar_month,
+              color: Colors.purple,
+            ),
             fillColor: Colors.white,
 
             border: OutlineInputBorder(
@@ -273,6 +288,10 @@ class PostJobPageState extends State<PostJobPage> {
       child: AbsorbPointer(
         child: TextField(
           decoration: InputDecoration(
+            suffixIcon: const Icon(
+              Icons.timer_outlined,
+              color: Colors.purple,
+            ),
             hintText: label,
             hintStyle: const TextStyle(color: Colors.grey),
             filled: true,
@@ -289,4 +308,14 @@ class PostJobPageState extends State<PostJobPage> {
       ),
     );
   }
+}
+
+Widget _buildFieldHeader(String heading) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(vertical: 5),
+    child: Text(
+      heading,
+      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+    ),
+  );
 }
