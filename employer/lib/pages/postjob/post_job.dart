@@ -1,3 +1,4 @@
+import 'package:employer/pages/postjob/job_post_res_page.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -96,6 +97,7 @@ class PostJobPageState extends State<PostJobPage> {
           TextButton(
             onPressed: () {
               // Submit form action
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> const JobPostResponsePage()));
             },
             child: const Text(
               "Post",
