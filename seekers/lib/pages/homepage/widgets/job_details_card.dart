@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:seekers/pages/homepage/widgets/accept_reject_btn.dart';
+import 'package:seekers/auth/custom_button.dart';
 import 'package:seekers/pages/job_details_page.dart';
 
 class JobDetailsCard extends StatelessWidget {
-  final Function()? rejectBtnPressed ;
+  final Function()? rejectBtnPressed;
   const JobDetailsCard({super.key, this.rejectBtnPressed});
 
   @override
@@ -43,35 +43,27 @@ class JobDetailsCard extends StatelessWidget {
             )
           ]),
           const SizedBox(height: 10),
-          const Text(
-            "Job Location",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-          ),
-          const Text("3rd Street, Moi Avenue"),
+          const Row(children: [
+             Icon(Icons.location_pin, color: Colors.grey, size:20,),
+             SizedBox(width: 10,),
+            Text("3rd Street, Moi Avenue", style: TextStyle(fontSize: 17),),
+          ]),
           const SizedBox(height: 10),
-          Row(
-            children: [
-              AcceptRejectBtn(
-                color: Colors.red,
-                text: 'REJECT',
-                onPressed: rejectBtnPressed,
-              ),
-              const Spacer(),
-              AcceptRejectBtn(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const JobDetailsPage()));
-                },
-                color: Colors.green,
-                text: 'ACCEPT',
-              ),
-            ],
-          )
+          const Text(
+            "Ksh. 3450",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+          ),
+          const SizedBox(height: 10),
+          CustomButton(
+              text: 'ACCEPT',
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const JobDetailsPage()));
+              }),
         ],
       ),
     );
   }
-
 }

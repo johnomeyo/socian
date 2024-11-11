@@ -109,7 +109,7 @@ class HomeControllerState extends State<HomeController> {
     });
 
     // Start a timer to switch back after 30 seconds
-    _timer = Timer(const Duration(seconds: 5), () {
+    _timer = Timer(const Duration(seconds: 120), () {
       setState(() {
         _isJobOfferDisplayed = false;
       });

@@ -19,7 +19,7 @@ class TimedHomePage extends StatelessWidget {
                     image: NetworkImage(
                         "https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/pass/GoogleMapTA.jpg"),
                     fit: BoxFit.cover)),
-            height: size.height * 0.7,
+            height: size.height * 0.65,
           ),
           const SizedBox(height: 20),
           JobDetailsCard(
