@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:provider/provider.dart';
@@ -92,6 +93,7 @@ class HomeController extends StatefulWidget {
 class HomeControllerState extends State<HomeController> {
   bool _isJobOfferDisplayed = false;
   Timer? _timer;
+  final AudioPlayer _player = AudioPlayer();
   void rejectJob() {
     // Cancel the timer when rejecting
     _timer?.cancel();
@@ -103,7 +105,10 @@ class HomeControllerState extends State<HomeController> {
     // Logic to handle job rejection (e.g., update backend, show message)
     print("Job has been rejected");
   }
-  void showTimedHomePage() {
+
+  void showTimedHomePage() async {
+    await _player.setSource(AssetSource('notification_alert.mp3'));
+    await _player.play(AssetSource('notification_alert.mp3'));
     setState(() {
       _isJobOfferDisplayed = true;
     });
@@ -119,11 +124,14 @@ class HomeControllerState extends State<HomeController> {
   @override
   void dispose() {
     _timer?.cancel(); // Cancel the timer if the widget is disposed
+    _player.dispose(); // Dispose the AudioPlayer
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return _isJobOfferDisplayed ? TimedHomePage(onReject: rejectJob) : HomePage(onJobPosted: showTimedHomePage);
+    return _isJobOfferDisplayed
+        ? TimedHomePage(onReject: rejectJob)
+        : HomePage(onJobPosted: showTimedHomePage);
   }
 }

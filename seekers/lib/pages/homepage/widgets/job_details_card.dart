@@ -28,7 +28,6 @@ class JobDetailsCard extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
               ),
               SizedBox(height: 5),
-              Text("Arriving in 4 minutes"),
             ]),
             Spacer(),
             Row(
@@ -44,11 +43,22 @@ class JobDetailsCard extends StatelessWidget {
           ]),
           const SizedBox(height: 10),
           const Row(children: [
-             Icon(Icons.location_pin, color: Colors.grey, size:20,),
-             SizedBox(width: 10,),
-            Text("3rd Street, Moi Avenue", style: TextStyle(fontSize: 17),),
+            Icon(
+              Icons.location_pin,
+              color: Colors.grey,
+              size: 20,
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Text(
+              "3rd Street, Moi Avenue",
+              style: TextStyle(fontSize: 17),
+            ),
           ]),
-          const SizedBox(height: 10),
+          // const SizedBox(height: 10),
+          const VerticalSlider(),
+
           const Text(
             "Ksh. 3450",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
@@ -62,6 +72,77 @@ class JobDetailsCard extends StatelessWidget {
                     MaterialPageRoute(
                         builder: (context) => const JobDetailsPage()));
               }),
+        ],
+      ),
+    );
+  }
+}
+
+class VerticalSlider extends StatelessWidget {
+  const VerticalSlider({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Dot and line indicator
+              Column(
+                children: [
+                  const Icon(Icons.square, size: 8, color: Colors.black),
+                  Container(
+                    width: 2,
+                    height: 40,
+                    color: Colors.grey,
+                  ),
+                  const Icon(Icons.square, size: 8, color: Colors.black),
+                ],
+              ),
+              const SizedBox(width: 8),
+              // Text details
+              const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Top section
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Start Time',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 16),
+                      ),
+                      Text(
+                        '8:00 AM',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                  // SizedBox(height: 20), // Spacing between sections
+                  // Bottom section
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'End Time',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 16),
+                      ),
+                      Text(
+                        '5:00 PM',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
         ],
       ),
     );

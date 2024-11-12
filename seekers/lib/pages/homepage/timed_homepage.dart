@@ -21,12 +21,9 @@ class TimedHomePage extends StatelessWidget {
                         image: NetworkImage(
                             "https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/pass/GoogleMapTA.jpg"),
                         fit: BoxFit.cover)),
-                height: size.height * 0.65,
+                height: size.height * 0.55,
               ),
-              const Positioned(
-                right: 30,
-                top: 30,
-                child: CountdownTimer()),
+              const Positioned(right: 30, top: 30, child: CountdownTimer()),
             ],
           ),
           const SizedBox(height: 20),
@@ -52,7 +49,7 @@ class CountdownTimerState extends State<CountdownTimer>
 
   String get timerString {
     Duration duration = _controller.duration! * _controller.value;
-    return '${duration.inMinutes}:${(duration.inSeconds % 60).toString().padLeft(2, '0')}';
+    return (duration.inSeconds % 60).toString().padLeft(2, '');
   }
 
   @override
