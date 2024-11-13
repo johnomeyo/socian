@@ -2,9 +2,13 @@ import 'package:employer/pages/homepage.dart';
 import 'package:employer/pages/walletpage/wallet_page.dart';
 import 'package:flutter/material.dart';
 import 'package:profile/profile/profile_page.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
-  runApp(const MyApp());
+    WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+    FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+      runApp(const MyApp());
+  FlutterNativeSplash.remove();
 }
 
 class MyApp extends StatelessWidget {
