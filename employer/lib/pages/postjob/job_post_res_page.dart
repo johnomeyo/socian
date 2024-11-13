@@ -1,4 +1,4 @@
-import 'package:employer/main.dart';
+import 'package:employer/pages/jobviewpage/job_view_page.dart';
 import 'package:employer/pages/walletpage/customb_btn.dart';
 import 'package:employer/pages/widgets/auth_header.dart';
 import 'package:flutter/material.dart';
@@ -64,6 +64,6 @@ class _JobPostResponsePageState extends State<JobPostResponsePage> {
   // Extracted action handling to a separate method
   void _onButtonPressed() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const MainScreen()));
+        context, MaterialPageRoute(builder: (context) => const ViewJobPage() ));
   }
 }
