@@ -5,6 +5,7 @@ import 'package:employer/pages/jobviewpage/job_description_section.dart';
 import 'package:employer/pages/jobviewpage/job_info_section.dart';
 import 'package:employer/pages/jobviewpage/job_payment_details.dart';
 import 'package:employer/pages/jobviewpage/maps_container.dart';
+import 'package:employer/pages/jobviewpage/socian_experience_card.dart';
 import 'package:flutter/material.dart';
 
 class ViewJobPage extends StatelessWidget {
@@ -48,6 +49,15 @@ class ViewJobPage extends StatelessWidget {
                   label: const Text("START SHIFT"),
                 ),
               ),
+              const SocianExperienceCard(
+                experiences: [
+                  "Chef at KFC",
+                  "Chef at CJ's",
+                  "Chef at Laleeys",
+                  "Chef at Java House",
+                ],
+              ),
+
               const SizedBox(height: 20),
 
               // Job Description Section

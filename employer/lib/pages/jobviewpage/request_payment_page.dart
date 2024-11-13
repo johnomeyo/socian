@@ -54,7 +54,7 @@ class RequestPaymentPage extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            CustomButton(text: "REQUEST PAYMENT", onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> ReviewPage()));})
+            CustomButton(text: "MAKE PAYMENT", onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> ReviewPage()));})
           ],
         ),
       ),

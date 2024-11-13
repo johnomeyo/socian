@@ -1,6 +1,7 @@
 import 'package:employer/main.dart';
 import 'package:employer/pages/walletpage/customb_btn.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_pannable_rating_bar/flutter_pannable_rating_bar.dart';
 
 
 class ReviewPage extends StatefulWidget {

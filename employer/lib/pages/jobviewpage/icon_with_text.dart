@@ -21,7 +21,7 @@ class IconWithText extends StatelessWidget {
           backgroundColor: Colors.grey[300],
           backgroundImage: imageUrl != null ? NetworkImage(imageUrl!) : null,
           child: icon != null
-              ? Icon(icon, color: Colors.purple, size: 24)
+              ? Icon(icon, color: Colors.black, size: 24)
               : null,
         ),
         const SizedBox(height: 4),
