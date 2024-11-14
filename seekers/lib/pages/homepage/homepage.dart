@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:seekers/auth/login_page.dart';
 import 'package:seekers/pages/homepage/widgets/greetings_widget.dart';
 import 'package:seekers/pages/homepage/widgets/job_categories.dart';
 import 'package:seekers/pages/homepage/widgets/loan_banner.dart';
 import 'package:seekers/pages/homepage/widgets/recent_job_lists.dart';
+import 'package:seekers/pages/jobviewpage/Job_SHift_page.dart';
 
 class HomePage extends StatelessWidget {
   final VoidCallback onJobPosted;
@@ -28,9 +28,9 @@ class HomePage extends StatelessWidget {
             padding: const EdgeInsets.only(right: 16, top: 10),
             child: InkWell(
               onTap: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => LoginPage())),
+                  MaterialPageRoute(builder: (context) => const JobShiftPage())),
               child: const Column(
-                children: [Icon(Icons.notifications), Text("Offline")],
+                children: [Icon(Icons.timer_outlined), Text("Shift")],
               ),
             ),
           )

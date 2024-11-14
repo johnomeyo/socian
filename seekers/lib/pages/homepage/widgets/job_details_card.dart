@@ -58,10 +58,16 @@ class JobDetailsCard extends StatelessWidget {
           ]),
           // const SizedBox(height: 10),
           const VerticalSlider(),
-
-          const Text(
-            "Ksh. 3450",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+          const Text("Ksh. 150/Hr", style: TextStyle(fontSize:18, fontWeight: FontWeight.bold),),
+          const Row(
+            children: [
+              Text("EST", style: TextStyle(fontSize:17),),
+              SizedBox(width: 10,),
+              Text(
+                "Ksh. 3450",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+              ),
+            ],
           ),
           const SizedBox(height: 10),
           CustomButton(
