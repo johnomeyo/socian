@@ -45,10 +45,10 @@ class LoanBanner extends StatelessWidget {
           ],
         ),
         Positioned(
-            right: 0,
+            right: -50,
             bottom: 0,
             child: Image.asset(
-              "assets/pointing_customer.png",
+              "assets/employer.png",
               height: 160,
             ))
       ]),
