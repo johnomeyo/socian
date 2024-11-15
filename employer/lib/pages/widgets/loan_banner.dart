@@ -18,7 +18,7 @@ class LoanBanner extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              '0% interest, \nTake a transport loan\n and pay it once you get \npaid',
+              'Schedule jobs \nPost a Scheduled Job and\nHave Motivated Socians\nshow up that day',
               style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
@@ -35,7 +35,7 @@ class LoanBanner extends StatelessWidget {
                 ),
               ),
               child: const Text(
-                'Apply Now',
+                'Post Now',
                 style: TextStyle(color: Colors.white),
               ),
             ),
