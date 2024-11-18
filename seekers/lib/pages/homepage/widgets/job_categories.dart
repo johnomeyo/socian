@@ -76,6 +76,26 @@ class JobCategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
+        title == 'Part Time'?
+        showDialog(context: context, builder: (context){
+return const AlertDialog(
+  content:  SizedBox(
+    height: 150,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        
+        SizedBox(height: 10,),
+        Icon(Icons.sentiment_satisfied_outlined, color: Colors.red, size: 50,),
+        SizedBox(height: 20,),
+        Text("COMING SOON!!", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25, color: Colors.purple),),
+
+      ],
+    ),
+  ),
+);
+        })
+         :
         Navigator.push(
             context,
             MaterialPageRoute(

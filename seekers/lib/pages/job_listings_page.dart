@@ -68,19 +68,9 @@ class JobListPage extends StatelessWidget {
         rate: 'KSH 150/H',
         estPay: 'EST: KSH 750',
         imageUrl:
-            'https://s3-alpha-sig.figma.com/img/e6a8/e58a/33b5ab9278017f8c6e6050f415bf8792?Expires=1730073600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=cU6K2wsVf53bqDT4JV44OjQ-n3aBk2mhXB9Krld0uJGfjzRp2LZDIETjjVG7ls2swYXqXEAHH9Y5tJxlOOqGROhDRbl7G83hTflf9BATKR0nk2wAPLY5g6d31Pa9enYPnIum-TIg~tq3~9HDJXk9QzBK5aueBZLcga-6iJf0K9wqfw-q0jTHxQk4Ia2iI2FMkE6Gbcqo2rpD6NKSnrdOwj0Xnm5ULwZbZ5xXi-aRnMXIrYaYT-P5e9KDu32xnhHRrl1KFu0xC933GgcALiJqQUhbQKdgkfHEZW6-8YMf-FwKoV9tFcrcJoXM4FMWo1Cn9nK~deiy6uaVI5a86FFe4w__', // Placeholder for job image
+            'https://images.unsplash.com/photo-1529290130-4ca3753253ae?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Placeholder for job image
       ),
-      JobItem(
-        title: 'Chef',
-        company: 'Julie Musk',
-        hours: '6 Hours',
-        posted: 'Now',
-        time: 'Fri 10:00 PM - 07:00 PM',
-        rate: 'KSH 250/H',
-        estPay: 'EST: KSH 1500',
-        imageUrl:
-            'https://s3-alpha-sig.figma.com/img/ac88/0b72/4d5e3e82b86a7fc2fc3ef510e045b3f4?Expires=1730073600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ITFasHMOmEOW2gGeDXD3XC27uz~150BVaTIW0uZA4lekoWu0oTjBj0SWPFlBhr7zkm4MJBVb9R2pUk5b2aNRRrngUCainuragjbFTNeaH2bmUQroTey1YREVMmlXn0~oAtjruWFL-hsyJZFdWqVnQ8yN7hxKk9sm9c5mcnvgKgRo-0DPUtFtdIECbbyVP9P1vWN1XmsIpLcK0bmiK0~FJiFHng3FFNhdgRSeWcq-IMES3cg4AUzDVDUw4Aru7vONALBsF5XHb9rQqdu99HZ-nSi8PzNz7eLKMIS6e24aOxhXmc-Nz9s2FIRDOwN49nZ7UpqGgSteRiCGogXkC7wQtg__', // Placeholder for job image
-      ),
+      
       JobItem(
         title: 'Waiter',
         company: 'KFC',
@@ -90,7 +80,7 @@ class JobListPage extends StatelessWidget {
         rate: 'KSH 150/H',
         estPay: 'EST: KSH 750',
         imageUrl:
-            'https://s3-alpha-sig.figma.com/img/a07f/61d3/6753414d7695323fe92a79b0fa37a604?Expires=1730073600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=hWqZgdeUlbVwD2JqqVLno04G6O-USP22JWLKcuZP1i83rXKC6ZGtac5zmkGny6H0bzWUe-jpC4eAeoVlZ5QP9TYnUxN0S2jZ7nKx7sXRlVOSkNeu9mRerjsoM8DSilp~UBQVhyJvx8tBT-YK2-O0hFn20058pKK4tcPZZR51y9PfTaFHl5wLGV4BUJ0D4Jr88A3ylNxccjTPg5fvpa0KOYvfq-VEh9Pna5Zv7aHeuNnYbG2NrdwmgMlgKcfLTnQIHsJGatCjamTAGGjWVHIjWjeD~68idzkuTJqYZQK9RzAOfvym3MgUxUl6lXbYWZ19kcpacIlsdC5x0m2ZgSi7nQ__', // Placeholder for job image
+            'https://images.unsplash.com/photo-1549294413-26f195200c16?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Placeholder for job image
       ),
       JobItem(
         title: 'Chef',
@@ -101,7 +91,7 @@ class JobListPage extends StatelessWidget {
         rate: 'KSH 250/H',
         estPay: 'EST: KSH 1500',
         imageUrl:
-            'https://s3-alpha-sig.figma.com/img/6dc8/2156/488756cc4e8e68e318ecc3e0c373b3a7?Expires=1730073600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=p2YyAuUTdZKWd~NP-eHtuKZ-KxL8X-h278-uPFK2HEa9RkAecQnkZnkvqbKddHVc~aQSoAe8Gsc7EaPA3ODq5tmpC2Rnudskc69DX347eeh3LPVAcuiS5d-bhaKNfN5pFilWG45I2QSkc94gA~mhG79xYzJl5uKOAe2gXlvtJGn6~B1LtKxgDTQgdcw67AvnQZhM9UKUA4BSJQ30~PRg8Bu1FH3fBD7EV9JNa3tfu376rUNjrNiQZAbgwJkhdPLd0q8kjjYKY9L1mUiZUC2ghO1AThpX~mqPLwGkP1EdcgYHOLPxKwXHisd69alyI7KcIlhNCAk9OIJh0kVt388Tfw__', // Placeholder for job image
+            'https://images.unsplash.com/photo-1517840901100-8179e982acb7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Placeholder for job image
       ),
       JobItem(
         title: 'Waiter',
@@ -112,7 +102,7 @@ class JobListPage extends StatelessWidget {
         rate: 'KSH 150/H',
         estPay: 'EST: KSH 750',
         imageUrl:
-            'https://s3-alpha-sig.figma.com/img/e6a8/e58a/33b5ab9278017f8c6e6050f415bf8792?Expires=1730073600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=cU6K2wsVf53bqDT4JV44OjQ-n3aBk2mhXB9Krld0uJGfjzRp2LZDIETjjVG7ls2swYXqXEAHH9Y5tJxlOOqGROhDRbl7G83hTflf9BATKR0nk2wAPLY5g6d31Pa9enYPnIum-TIg~tq3~9HDJXk9QzBK5aueBZLcga-6iJf0K9wqfw-q0jTHxQk4Ia2iI2FMkE6Gbcqo2rpD6NKSnrdOwj0Xnm5ULwZbZ5xXi-aRnMXIrYaYT-P5e9KDu32xnhHRrl1KFu0xC933GgcALiJqQUhbQKdgkfHEZW6-8YMf-FwKoV9tFcrcJoXM4FMWo1Cn9nK~deiy6uaVI5a86FFe4w__', // Placeholder for job image
+            'https://plus.unsplash.com/premium_photo-1715183752277-73dafdd74bd7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Placeholder for job image
       ),
     ];
 
