@@ -14,7 +14,7 @@ import 'package:seekers/theme.dart';
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-  await Future.delayed(const Duration(seconds: 0));
+  await Future.delayed(const Duration(seconds: 4));
   FlutterNativeSplash.remove();
   runApp(
     MultiProvider(
