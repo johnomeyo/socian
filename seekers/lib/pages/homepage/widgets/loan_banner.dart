@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 // Loan Banner Widget
 class LoanBanner extends StatelessWidget {
   const LoanBanner({super.key});
@@ -17,15 +18,16 @@ class LoanBanner extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const SizedBox(height: 10),
             const Text(
-              '0% interest, \nTake a transport loan\n and pay it once you get \npaid',
+              '0% interest, \nTake a transport loan\nand pay it once you get \npaid',
               style: TextStyle(
-                fontSize: 25,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
             ),
-            const SizedBox(height: 25),
+            const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
@@ -40,16 +42,16 @@ class LoanBanner extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 10,
             ),
           ],
         ),
         Positioned(
-            right: -10,
+            right: 0,
             bottom: 0,
             child: Image.asset(
               "assets/pointing_customer.png",
-              height: 140,
+              height: 110,
             ))
       ]),
     );
