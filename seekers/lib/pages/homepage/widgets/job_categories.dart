@@ -26,7 +26,8 @@ class JobCategories extends StatelessWidget {
               title: '1-5 Hour jobs',
               color: Colors.purpleAccent,
               icon: Icons.timer,
-              height: size.height * 0.22,
+              // height: size.height * 0.22,
+              height: 170,
               width: size.width * 0.4,
             ),
             Column(
@@ -36,6 +37,7 @@ class JobCategories extends StatelessWidget {
                   color: Colors.deepPurple,
                   icon: Icons.timer_outlined,
                   width: size.width * 0.4,
+                   height: 75,
                 ),
                 const SizedBox(
                   height: 20,
@@ -45,6 +47,7 @@ class JobCategories extends StatelessWidget {
                   color: Colors.purple,
                   icon: Icons.work_outline,
                   width: size.width * 0.4,
+                  height: 75,
                 ),
               ],
             )
@@ -114,13 +117,13 @@ return const AlertDialog(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, color: Colors.white, size: 28),
-            const SizedBox(height: 8),
+            Icon(icon, color: Colors.white, size: 25),
+            const SizedBox(height: 5),
             Text(
               title,
               textAlign: TextAlign.center,
               style: const TextStyle(
-                fontSize: 12,
+                fontSize: 11,
                 color: Colors.white,
               ),
             ),
