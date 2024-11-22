@@ -25,37 +25,50 @@ class SubscriptionPage extends StatelessWidget {
               const SizedBox(height: 20),
               // Plan Cards
               _buildPlanCard(
-                price: 'Ksh 500/mth',
-                planName: 'Socian Starter',
+                price: 'Ksh 2800/mth',
+                planName: 'Socian Business',
                 features: [
-                  'Limited (can only work twice a day)',
-                  'Chat to employer',
-                  'Guaranteed jobs',
-                  'Customer Service',
+                  'Get vetted & qualified Socians within minutes and scale your workforce on demand',
+                  'Our app is simple-easy to use, use socian anytime you want',
+                  'Giving you full control, you can choose and pick socians you want',
+                  'Get to call back your favorite socians to do services for your business',
+                  'Cost-Efficient and Reliable service',
+                  'Guranteed show up',
+                  '24/7 Customer Service'
                 ],
-                buttonText: 'Renew Plan',
+                buttonText: 'Choose Plan',
                 buttonCallback: () {},
                 iconColor: Colors.green,
               ),
               const SizedBox(height: 100),
               _buildPlanCard(
-                price: 'Ksh 1200/mth',
-                planName: 'Socian Premium',
+                price: 'Ksh 2000/mth',
+                planName: 'Socian Cafe',
                 features: [
-                  'Unlimited work (work anytime, any day of the week)'
-                  'Will be recalled/rehired',
-                  'Fair Per-Hour Pay',
-                  'Chat to employer',
-                  'Transportation loan(0% interest)',
-                  'Flexible Work Arrangements',
-                  'Reliability',
-                  'Guaranteed jobs',
-                  '24/7 customer service support'
-                  
+                  'Get vetted & qualified Socians within minutes and scale your workforce on demand',
+                  'Our app is simple-easy to use, use socian anytime you want',
+                  'Giving you full control, you can choose and pick socians you want',
+                  'Get to call back your favorite socians to do services for your business',
+                  'Cost-Efficient and Reliable service',
+                  'Guranteed show up',
+                  '24/7 Customer Service'
                 ],
                 buttonText: 'Choose Plan',
                 buttonCallback: () {},
-                iconColor: Colors.purple,
+                iconColor: Colors.green,
+              ),
+               const SizedBox(height: 100),
+              _buildPlanCard(
+                price: 'Ksh 800/once',
+                planName: 'Socian I-Once',
+                features: [
+                 'Very limited can only use socian to post on-demand hourly job only once a day',
+                 'Guranteed show up',
+                 'Customer Service'
+                ],
+                buttonText: 'Choose Plan',
+                buttonCallback: () {},
+                iconColor: Colors.green,
               ),
             ],
           ),
@@ -128,7 +141,8 @@ class SubscriptionPage extends StatelessWidget {
           CircleAvatar(
             backgroundColor: iconColor.withOpacity(0.2),
             radius: 15,
-            child: Icon(Icons.check, color: iconColor.withOpacity(0.8), size: 20),
+            child:
+                Icon(Icons.check, color: iconColor.withOpacity(0.8), size: 20),
           ),
           const SizedBox(width: 8),
           Expanded(
