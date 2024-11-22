@@ -184,15 +184,15 @@ class WalletPage extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           _buildTransactionItem(
-              "Received", "Yesterday 02:12", "+ksh430.00", context),
+              "Withdrawn", "Yesterday 02:12", "-ksh430.00", context),
           _buildTransactionItem(
-              "Received", "Yesterday 02:12", "+ksh430.00", context),
+              "Withdrawn", "Yesterday 02:12", "-ksh430.00", context),
           _buildTransactionItem(
               "Withdrawn", "Yesterday 02:12", "-ksh300.00", context),
           _buildTransactionItem(
-              "Received", "Yesterday 02:12", "+ksh430.00", context),
+              "Withdrawn", "Yesterday 02:12", "-ksh430.00", context),
           _buildTransactionItem(
-              "Received", "Yesterday 02:12", "+ksh430.00", context),
+              "Withdrawn", "Yesterday 02:12", "-ksh430.00", context),
         ],
       ),
     );
@@ -215,12 +215,12 @@ class WalletPage extends StatelessWidget {
             leading: CircleAvatar(
               backgroundColor: isReceived
                   ? Colors.purple.withOpacity(0.2)
-                  : Colors.red.withOpacity(0.2),
+                  : Colors.purpleAccent.withOpacity(0.2),
               child: Icon(
                 isReceived
-                    ? Icons.file_upload_outlined
-                    : Icons.file_download_outlined,
-                color: isReceived ? Colors.purple : Colors.red,
+                    ? Icons.file_download_outlined
+                    : Icons.file_upload_outlined,
+                color: isReceived ? Colors.purple : Colors.purpleAccent,
               ),
             ),
             title: Text(

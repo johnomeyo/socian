@@ -187,7 +187,7 @@ class WalletPage extends StatelessWidget {
           _buildTransactionItem(
               "Received", "Yesterday 02:12", "+ksh430.00", context),
           _buildTransactionItem(
-              "Withdrawn", "Yesterday 02:12", "-ksh300.00", context),
+              "Received", "Yesterday 02:12", "+ksh300.00", context),
           _buildTransactionItem(
               "Received", "Yesterday 02:12", "+ksh430.00", context),
           _buildTransactionItem(
