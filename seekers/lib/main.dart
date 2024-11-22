@@ -94,13 +94,15 @@ class HomeControllerState extends State<HomeController> {
   bool _isJobOfferDisplayed = false;
   Timer? _timer;
   final AudioPlayer _player = AudioPlayer();
-  void rejectJob() {
+  void onDismissAudio() async {
+    //stop the audio
+    await _player.stop();
     // Cancel the timer when rejecting
-    _timer?.cancel();
+    // _timer?.cancel();
 
-    setState(() {
-      _isJobOfferDisplayed = false;
-    });
+    // setState(() {
+    //   _isJobOfferDisplayed = false;
+    // });
 
     // Logic to handle job rejection (e.g., update backend, show message)
     print("Job has been rejected");
@@ -131,7 +133,7 @@ class HomeControllerState extends State<HomeController> {
   @override
   Widget build(BuildContext context) {
     return _isJobOfferDisplayed
-        ? TimedHomePage(onReject: rejectJob)
+        ? TimedHomePage(onDismissAudio: onDismissAudio)
         : HomePage(onJobPosted: showTimedHomePage);
   }
 }
