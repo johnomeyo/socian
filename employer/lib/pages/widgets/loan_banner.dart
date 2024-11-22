@@ -17,15 +17,16 @@ class LoanBanner extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const SizedBox(height: 10),
             const Text(
               'Schedule jobs \nPost a Scheduled Job and\nHave Motivated Socians\nshow up that day',
               style: TextStyle(
-                fontSize: 25,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
             ),
-            const SizedBox(height: 25),
+            const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
@@ -40,16 +41,16 @@ class LoanBanner extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 10,
             ),
           ],
         ),
         Positioned(
-            right: -50,
+            right: -10,
             bottom: 0,
             child: Image.asset(
               "assets/employer.png",
-              height: 160,
+              height: 132,
             ))
       ]),
     );

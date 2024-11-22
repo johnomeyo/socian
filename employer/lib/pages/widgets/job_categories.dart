@@ -12,7 +12,7 @@ class JobCategories extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
-          'Find Your Job',
+          'Find Your Socians',
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
@@ -26,7 +26,7 @@ class JobCategories extends StatelessWidget {
               title: '1-5 Hour jobs',
               color: Colors.purpleAccent,
               icon: Icons.timer,
-              height: size.height * 0.22,
+              height: 170,
               width: size.width * 0.4,
             ),
             Column(
@@ -36,6 +36,7 @@ class JobCategories extends StatelessWidget {
                   color: Colors.deepPurple,
                   icon: Icons.timer_outlined,
                   width: size.width * 0.4,
+                   height: 75,
                 ),
                 const SizedBox(
                   height: 20,
@@ -45,6 +46,7 @@ class JobCategories extends StatelessWidget {
                   color: Colors.purple,
                   icon: Icons.work_outline,
                   width: size.width * 0.4,
+                  height: 75,
                 ),
               ],
             )
@@ -76,6 +78,26 @@ class JobCategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
+        title == 'Part Time'?
+        showDialog(context: context, builder: (context){
+return const AlertDialog(
+  content:  SizedBox(
+    height: 150,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        
+        SizedBox(height: 10,),
+        Icon(Icons.sentiment_satisfied_outlined, color: Colors.red, size: 50,),
+        SizedBox(height: 20,),
+        Text("COMING SOON!!", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25, color: Colors.purple),),
+
+      ],
+    ),
+  ),
+);
+        })
+         :
         Navigator.push(
             context,
             MaterialPageRoute(
@@ -94,13 +116,13 @@ class JobCategoryCard extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, color: Colors.white, size: 28),
-            const SizedBox(height: 8),
+            Icon(icon, color: Colors.white, size: 25),
+            const SizedBox(height: 5),
             Text(
               title,
               textAlign: TextAlign.center,
               style: const TextStyle(
-                fontSize: 12,
+                fontSize: 11,
                 color: Colors.white,
               ),
             ),
