@@ -7,6 +7,7 @@ import 'package:seekers/auth/custom_checkbox.dart';
 import 'package:seekers/auth/custom_textfield.dart';
 import 'package:seekers/auth/google_sign_in_btn.dart';
 import 'package:seekers/auth/login_page.dart';
+import 'package:seekers/services/auth_service.dart';
 
 class SignupPage extends StatelessWidget {
   final TextEditingController nameController = TextEditingController();
@@ -61,11 +62,16 @@ class SignupPage extends StatelessWidget {
                 hintText: '*******',
               ),
               const SizedBox(height: 20),
-               const RememberMeForgotPassword(text: 'Terms and Conditions',),  
+              const RememberMeForgotPassword(
+                text: 'Terms and Conditions',
+              ),
               CustomButton(
                 text: "SIGN UP",
                 onPressed: () {
                   // Handle signup logic
+                  AuthService authService = AuthService();
+                  authService.signUp(emailController.text.trim(),
+                      passwordController.text.trim());
                 },
               ),
               const SizedBox(height: 20),

@@ -40,6 +40,7 @@ dependencies:
   flutter_native_splash: ^2.4.2
   flutter_pannable_rating_bar: ^2.7.2+1
   audioplayers: ^6.1.0
+  http: ^1.2.2
 
 dev_dependencies:
   flutter_test:

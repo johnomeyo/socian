@@ -7,6 +7,7 @@ import 'package:seekers/auth/custom_checkbox.dart';
 import 'package:seekers/auth/custom_textfield.dart';
 import 'package:seekers/auth/google_sign_in_btn.dart';
 import 'package:seekers/auth/sign_up.dart';
+import 'package:seekers/services/auth_service.dart';
 
 class LoginPage extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
@@ -53,6 +54,9 @@ class LoginPage extends StatelessWidget {
                 text: "LOGIN",
                 onPressed: () {
                   // Handle login logic
+                  AuthService authService = AuthService();
+                  authService.login(emailController.text.trim(),
+                      passwordController.text.trim());
                 },
               ),
               const SizedBox(height: 20),

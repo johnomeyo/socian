@@ -73,7 +73,8 @@ class JobDetailsCard extends StatelessWidget {
           CustomButton(
               text: 'ACCEPT',
               onPressed: () {
-                Navigator.push(
+                rejectBtnPressed!();
+                Navigator.push( 
                     context,
                     MaterialPageRoute(
                         builder: (context) => const JobDetailsPage()));
