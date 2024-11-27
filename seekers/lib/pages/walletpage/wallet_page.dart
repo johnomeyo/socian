@@ -24,7 +24,6 @@ class WalletPage extends StatelessWidget {
                 "My Subscription",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 16,
                     color: Colors.purple),
               ),
             ),
@@ -139,7 +138,7 @@ class WalletPage extends StatelessWidget {
                 "Socian Starter ksh 500/mth",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 16,
+                    // fontSize: 16,
                     color: Colors.purple),
               ),
               FilledButton.tonal(

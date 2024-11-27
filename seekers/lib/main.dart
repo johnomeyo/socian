@@ -4,7 +4,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:provider/provider.dart';
-import 'package:seekers/auth/login_page.dart';
+// import 'package:seekers/auth/login_page.dart';
 import 'package:seekers/pages/homepage/homepage.dart';
 import 'package:seekers/pages/homepage/timed_homepage.dart';
 import 'package:seekers/pages/profile/profile_page.dart';
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(theme: appTheme, home:  LoginPage());
+    return MaterialApp(theme: appTheme, home: const MainScreen());
   }
 }
 

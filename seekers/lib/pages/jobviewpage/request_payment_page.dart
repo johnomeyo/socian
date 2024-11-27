@@ -39,22 +39,24 @@ class RequestPaymentPage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-        child: Column(
-          children: [
-            const TimeCard(
-                hours: 4,
-                minutes: 00,
-                startTime: "9:00 am",
-                endTime: '1:00 pm'),
-            const SizedBox(
-              height: 20,
-            ),
-            const JobPaymentDetails(),
-            const SizedBox(
-              height: 40,
-            ),
-            CustomButton(text: "REQUEST PAYMENT", onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> ReviewPage()));})
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const TimeCard(
+                  hours: 4,
+                  minutes: 00,
+                  startTime: "9:00 am",
+                  endTime: '1:00 pm'),
+              const SizedBox(
+                height: 20,
+              ),
+              const JobPaymentDetails(),
+              const SizedBox(
+                height: 40,
+              ),
+              CustomButton(text: "REQUEST PAYMENT", onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> ReviewPage()));})
+            ],
+          ),
         ),
       ),
     );
