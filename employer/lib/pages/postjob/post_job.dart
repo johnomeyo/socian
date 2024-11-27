@@ -120,7 +120,7 @@ class PostJobPageState extends State<PostJobPage> {
                 CircleAvatar(
                   radius: 24,
                   backgroundImage: NetworkImage(
-                      'https://via.placeholder.com/150'), // Replace with your image URL
+                      'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/c7/0f/0b/upepo-restaurant.jpg?w=600&h=-1&s=1'), // Replace with your image URL
                 ),
                 SizedBox(width: 16),
                 Column(
