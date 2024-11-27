@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:seekers/pages/jobviewpage/Job_SHift_page.dart';
+import 'package:seekers/auth/custom_button.dart';
+import 'package:seekers/main.dart';
 import 'package:seekers/pages/jobviewpage/action_buttons.dart';
 import 'package:seekers/pages/jobviewpage/info_card.dart';
 import 'package:seekers/pages/jobviewpage/job_description_section.dart';
@@ -7,51 +8,41 @@ import 'package:seekers/pages/jobviewpage/job_info_section.dart';
 import 'package:seekers/pages/jobviewpage/job_payment_details.dart';
 import 'package:seekers/pages/jobviewpage/maps_container.dart';
 
+// Spacing constants
+const double verticalSpacing = 20.0;
+
 class ViewJobPage extends StatelessWidget {
   const ViewJobPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-      ),
+      appBar: AppBar(elevation: 0),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Top Image - Placeholder for the map image
               const MapsContainer(),
-              const SizedBox(height: 16),
+              const SizedBox(height: verticalSpacing),
 
-              // Job Details Section
               const JobInfoSection(),
-              const SizedBox(height: 20),
+              const SizedBox(height: verticalSpacing),
 
-              // Job Payment Details Section
               const JobPaymentDetails(),
-              const SizedBox(height: 20),
+              const SizedBox(height: verticalSpacing),
 
               // Start Shift Button
-              SizedBox(
-                width: double.infinity,
-                child: FilledButton.icon(
-                  onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> const JobShiftPage()));
-                  },
-                  icon: const Icon(Icons.timelapse),
-                  label: const Text("START SHIFT"),
-                ),
+              CustomButton(
+                text: "START SHIFT",
+                onPressed: () => _showStartShiftDialog(context),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: verticalSpacing),
 
-              // Job Description Section
               const JobDescriptionSection(),
-              const SizedBox(height: 20),
+              const SizedBox(height: verticalSpacing),
 
-              // Bottom Action Buttons
               const BottomActionButtons(),
               const SizedBox(height: 8),
             ],
@@ -60,9 +51,52 @@ class ViewJobPage extends StatelessWidget {
       ),
     );
   }
+
+  void _showStartShiftDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (_) => const StartShiftDialog(),
+    );
+  }
 }
 
-// Bottom action buttons: Share work details and Contact worker
+class StartShiftDialog extends StatelessWidget {
+  const StartShiftDialog({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      content: SizedBox(
+        height: 175,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(Icons.check_circle, color: Colors.green, size: 60),
+            const SizedBox(height: 16),
+            const Text(
+              "To view your shift details, go to the homepage and tap the clock icon in the top-right corner.",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontWeight: FontWeight.w500),
+            ),
+            const SizedBox(height: 16),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: TextButton(
+                onPressed: () => Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MainScreen()),
+                ),
+                child: const Text("Continue"),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class BottomActionButtons extends StatelessWidget {
   const BottomActionButtons({super.key});
 

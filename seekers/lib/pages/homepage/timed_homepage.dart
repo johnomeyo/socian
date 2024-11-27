@@ -23,7 +23,7 @@ class TimedHomePage extends StatelessWidget {
                           image: NetworkImage(
                               "https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/pass/GoogleMapTA.jpg"),
                           fit: BoxFit.cover)),
-                  height: size.height * 0.55,
+                  height: size.height * 0.5,
                 ),
               ),
               const Positioned(right: 30, top: 30, child: CountdownTimer()),
