@@ -1,7 +1,7 @@
 
 // Job payment and time details
-import 'package:employer/pages/jobviewpage/info_card.dart';
-import 'package:employer/pages/jobviewpage/job_detail_row.dart';
+import 'package:employer/pages/jobviewpage/widgets/info_card.dart';
+import 'package:employer/pages/jobviewpage/widgets/job_detail_row.dart';
 import 'package:flutter/material.dart';
 
 

@@ -1,6 +1,6 @@
-import 'package:employer/pages/jobviewpage/job_payment_details.dart';
-import 'package:employer/pages/jobviewpage/review_page.dart';
-import 'package:employer/pages/jobviewpage/time_card.dart';
+import 'package:employer/pages/jobviewpage/widgets/job_payment_details.dart';
+import 'package:employer/pages/jobviewpage/pages/review_page.dart';
+import 'package:employer/pages/jobviewpage/widgets/time_card.dart';
 import 'package:employer/pages/walletpage/customb_btn.dart';
 import 'package:flutter/material.dart';
 

@@ -1,8 +1,8 @@
-import 'package:employer/pages/jobviewpage/job_description_section.dart';
-import 'package:employer/pages/jobviewpage/job_payment_details.dart';
-import 'package:employer/pages/jobviewpage/view_socian_details_page.dart';
-import 'package:employer/pages/jobviewpage/request_payment_page.dart';
-import 'package:employer/pages/jobviewpage/shift_card.dart';
+import 'package:employer/pages/jobviewpage/pages/request_payment_page.dart';
+import 'package:employer/pages/jobviewpage/pages/view_socian_details_page.dart';
+import 'package:employer/pages/jobviewpage/widgets/job_description_section.dart';
+import 'package:employer/pages/jobviewpage/widgets/job_payment_details.dart';
+import 'package:employer/pages/jobviewpage/widgets/shift_card.dart';
 import 'package:flutter/material.dart';
 
 

@@ -1,11 +1,11 @@
 import 'package:employer/main.dart';
-import 'package:employer/pages/jobviewpage/action_buttons.dart';
-import 'package:employer/pages/jobviewpage/info_card.dart';
-import 'package:employer/pages/jobviewpage/job_description_section.dart';
-import 'package:employer/pages/jobviewpage/job_info_section.dart';
-import 'package:employer/pages/jobviewpage/job_payment_details.dart';
-import 'package:employer/pages/jobviewpage/maps_container.dart';
-import 'package:employer/pages/jobviewpage/socian_experience_card.dart';
+import 'package:employer/pages/jobviewpage/widgets/action_buttons.dart';
+import 'package:employer/pages/jobviewpage/widgets/info_card.dart';
+import 'package:employer/pages/jobviewpage/widgets/job_description_section.dart';
+import 'package:employer/pages/jobviewpage/widgets/job_info_section.dart';
+import 'package:employer/pages/jobviewpage/widgets/job_payment_details.dart';
+import 'package:employer/pages/jobviewpage/widgets/maps_container.dart';
+import 'package:employer/pages/jobviewpage/widgets/socian_experience_card.dart';
 import 'package:employer/pages/walletpage/customb_btn.dart';
 import 'package:flutter/material.dart';
 

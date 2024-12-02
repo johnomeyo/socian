@@ -1,4 +1,4 @@
-import 'package:employer/pages/jobviewpage/view_socian_details_page.dart';
+import 'package:employer/pages/jobviewpage/pages/view_socian_details_page.dart';
 import 'package:employer/pages/walletpage/customb_btn.dart';
 import 'package:employer/pages/widgets/auth_header.dart';
 import 'package:flutter/material.dart';

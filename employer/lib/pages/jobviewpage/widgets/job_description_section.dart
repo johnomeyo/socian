@@ -1,5 +1,5 @@
 // Job description section with a read more button
-import 'package:employer/pages/jobviewpage/info_card.dart';
+import 'package:employer/pages/jobviewpage/widgets/info_card.dart';
 import 'package:flutter/material.dart';
 
 class JobDescriptionSection extends StatelessWidget {

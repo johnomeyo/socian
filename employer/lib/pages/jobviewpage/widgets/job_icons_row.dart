@@ -1,5 +1,5 @@
 // Row with Java, Chat, and Safety icons
-import 'package:employer/pages/jobviewpage/icon_with_text.dart';
+import 'package:employer/pages/jobviewpage/widgets/icon_with_text.dart';
 import 'package:flutter/material.dart';
 
 class JobIconsRow extends StatelessWidget {

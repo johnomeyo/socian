@@ -1,4 +1,4 @@
-import 'package:employer/pages/jobviewpage/Job_SHift_page.dart';
+import 'package:employer/pages/jobviewpage/pages/job_shift_page.dart';
 import 'package:employer/pages/widgets/greeting_widget.dart';
 import 'package:employer/pages/widgets/job_categories.dart';
 import 'package:employer/pages/widgets/loan_banner.dart';
