@@ -3,7 +3,6 @@ import 'package:employer/pages/walletpage/subscriptions_plans_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-
 class WalletPage extends StatelessWidget {
   const WalletPage({super.key});
 
@@ -139,9 +138,7 @@ class WalletPage extends StatelessWidget {
               const Text(
                 "Socian Starter ksh 500/mth",
                 style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                    color: Colors.purple),
+                    fontWeight: FontWeight.bold, color: Colors.purple),
               ),
               FilledButton.tonal(
                   onPressed: () {

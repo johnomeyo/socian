@@ -1,6 +1,6 @@
 import 'package:employer/pages/jobviewpage/job_description_section.dart';
 import 'package:employer/pages/jobviewpage/job_payment_details.dart';
-import 'package:employer/pages/jobviewpage/job_view_page.dart';
+import 'package:employer/pages/jobviewpage/view_socian_details_page.dart';
 import 'package:employer/pages/jobviewpage/request_payment_page.dart';
 import 'package:employer/pages/jobviewpage/shift_card.dart';
 import 'package:flutter/material.dart';
