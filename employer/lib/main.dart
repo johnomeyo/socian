@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:profile/profile/profile_page.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
-void main() {
-    WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-    FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-      runApp(const MyApp());
+void main() async {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  runApp(const MyApp());
+  await Future.delayed(const Duration(seconds: 4));
   FlutterNativeSplash.remove();
 }
 
