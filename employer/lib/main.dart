@@ -1,7 +1,8 @@
 import 'package:employer/pages/homepage.dart';
+import 'package:employer/pages/onboarding/onboarding_page.dart';
 import 'package:employer/pages/walletpage/wallet_page.dart';
 import 'package:flutter/material.dart';
-import 'package:profile/profile/profile_page.dart';
+// import 'package:profile/profile/profile_page.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() async {
@@ -49,7 +50,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: IndexedStack(
         index: selectedIndex,
-        children: const [HomePage(), WalletPage(), ProfilePage()],
+        children: const [HomePage(), WalletPage(),OnboardingPage()],
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,

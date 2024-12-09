@@ -40,6 +40,7 @@ dependencies:
   intl: ^0.19.0
   flutter_native_splash: ^2.4.2
   flutter_pannable_rating_bar: ^2.7.2+1
+  fl_chart: ^0.69.2
 
 dev_dependencies:
   flutter_test:
